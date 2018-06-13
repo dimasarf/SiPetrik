@@ -8,8 +8,10 @@ public class Mesin {
         this.nama = Nama;
     }
 
-    public void produksiBarang()
+    public void produksiBarang(boolean status)
     {
-
+        Barang barang = new Barang(this.nama +"1", status);
+        Pencatatan catat = new Pencatatan(this, barang);
+        catat.catatProduksi();
     }
 }
