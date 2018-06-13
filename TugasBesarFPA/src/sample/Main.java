@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main extends Application {
@@ -25,8 +27,12 @@ public class Main extends Application {
     {
         Mesin mesin1 = new Mesin("fxPa1");
         mesin1.produksiBarang(true);
+        Mesin mesin2 = new Mesin("fxpa2");
+        mesin2.produksiBarang(false);
+        Mesin mesin3 = new Mesin("fxpa3");
+        mesin3.produksiBarang(true);
         System.out.println("tes");
-        launch(args);
+        //launch(args);
 
     }
 }
