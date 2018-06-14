@@ -25,14 +25,14 @@ public class Main extends Application {
 
     public static void main(String[] args)
     {
-        Mesin mesin1 = new Mesin("fxPa1");
+        /*Mesin mesin1 = new Mesin("fxPa1");
         mesin1.produksiBarang(true);
         Mesin mesin2 = new Mesin("fxpa2");
         mesin2.produksiBarang(false);
         Mesin mesin3 = new Mesin("fxpa3");
         mesin3.produksiBarang(true);
-        System.out.println("tes");
-        //launch(args);
+        System.out.println("tes");*/
+        launch(args);
 
     }
 }
