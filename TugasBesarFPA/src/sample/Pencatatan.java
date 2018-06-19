@@ -3,6 +3,7 @@ package sample;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.lang.model.element.Element;
@@ -195,6 +196,35 @@ public class Pencatatan
 
         transformer.transform(source, result);
     }
+
+    public static int getTotalProduksi() throws IOException, SAXException, ParserConfigurationException {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.parse("dataProduksi.xml");
+        NodeList produksi = doc.getElementsByTagName("Produksi");
+        return produksi.getLength();
+    }
+
+    public static int getDetailOuput(String Kondisi) throws ParserConfigurationException, IOException, SAXException {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.parse("dataProduksi.xml");
+        NodeList produksi = doc.getElementsByTagName("Produksi");
+        int nOuputOk = 0;
+
+        for (int i=0; i<produksi.getLength(); i++)
+        {
+            Node node = produksi.item(i);
+            org.w3c.dom.Element elemen = (org.w3c.dom.Element) node;
+            String kondisi = elemen.getElementsByTagName("Kondisi_Barang").item(0).getTextContent();
+            System.out.println(kondisi);
+            if(kondisi.equals(Kondisi))
+                nOuputOk+=1;
+        }
+        return nOuputOk;
+    }
+
+
 
 
 

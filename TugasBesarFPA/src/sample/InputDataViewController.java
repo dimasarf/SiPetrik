@@ -38,6 +38,8 @@ public class InputDataViewController implements Initializable
     private JFXProgressBar progressBar;
     @FXML
     private Button btnSubmit;
+
+
     BackGroundWorker worker;
     private  ToggleGroup group;
     @Override

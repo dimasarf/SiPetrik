@@ -98,7 +98,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="948.0" layoutY="318.0" text="Kamis, 14 Juni 2018" textFill="#403d3d">
+      <Label fx:id="lblTgl" layoutX="948.0" layoutY="318.0" text="Kamis, 14 Juni 2018" textFill="#403d3d">
          <font>
             <Font size="12.0" />
          </font>
@@ -108,14 +108,14 @@
             <Image url="@calendar.png" />
          </image>
       </ImageView>
-      <Label layoutX="948.0" layoutY="348.0" prefHeight="15.0" prefWidth="173.0" text="17: 00" textFill="#403d3d">
+      <Label fx:id="lblJam" layoutX="948.0" layoutY="348.0" prefHeight="15.0" prefWidth="173.0" text="17: 00" textFill="#403d3d">
          <font>
             <Font size="12.0" />
          </font>
       </Label>
       <ImageView fitHeight="21.0" fitWidth="38.0" layoutX="912.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@clock.png" />
+            <Image url="@clock%20(1).png" />
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9b59b6" height="118.0" layoutX="239.0" layoutY="57.0" stroke="WHITE" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="122.0" />
@@ -128,7 +128,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="429.0" layoutY="139.0" text="400" textFill="#403d3d">
+      <Label fx:id="totalProduksi" layoutX="429.0" layoutY="139.0" text="400" textFill="#403d3d">
          <font>
             <Font size="12.0" />
          </font>
@@ -138,7 +138,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="748.0" layoutY="139.0" text="285" textFill="#403d3d">
+      <Label fx:id="totalOuputOk" layoutX="748.0" layoutY="139.0" text="285" textFill="#403d3d">
          <font>
             <Font size="12.0" />
          </font>
@@ -148,7 +148,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="1081.0" layoutY="139.0" text="115" textFill="#403d3d">
+      <Label fx:id="totalOuputReject" layoutX="1081.0" layoutY="139.0" text="115" textFill="#403d3d">
          <font>
             <Font size="12.0" />
          </font>
