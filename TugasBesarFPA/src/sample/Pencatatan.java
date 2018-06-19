@@ -17,8 +17,10 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -29,11 +31,13 @@ public class Pencatatan
     private Barang barang;
     private Date date;
 
-    public Pencatatan(Mesin mesin, Barang barang) {
+    public Pencatatan(Mesin mesin, Barang barang, Date date) {
         this.mesin = mesin;
         this.barang = barang;
-        this.date = new Date();
+        this.date = date;
     }
+
+
 
     public Barang getBarang() {
         return barang;
@@ -53,7 +57,7 @@ public class Pencatatan
         stream.alias("Barang", Barang.class);
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-        org.w3c.dom.Document doc = docBuilder.parse("dataMesin.xml");
+        org.w3c.dom.Document doc = docBuilder.parse("dataProduksi.xml");
         org.w3c.dom.Element root = doc.getDocumentElement();
 
         List<Pencatatan> pencatatanList = new ArrayList<>();
@@ -64,20 +68,63 @@ public class Pencatatan
             {
                 org.w3c.dom.Element rootElement = doc.createElement("Pencatatan");
 
-                org.w3c.dom.Element Mesin = doc.createElement("Mesin");
-                rootElement.appendChild(Mesin);
-                Mesin.appendChild(doc.createTextNode(catatan.getMesin().getNama()));
+                org.w3c.dom.Element produksi = doc.createElement("Produksi");
+                rootElement.appendChild(produksi);
 
-                org.w3c.dom.Element namaBarang = doc.createElement("Id_Barang");
-                namaBarang.appendChild(doc.createTextNode(catatan.getBarang().getId()));
-                rootElement.appendChild(namaBarang);
+                org.w3c.dom.Element mesin = doc.createElement("Mesin");
+                mesin.appendChild(doc.createTextNode(catatan.getMesin().getNama()));
+                produksi.appendChild(mesin);
 
+                org.w3c.dom.Element idBarang = doc.createElement("Id_Barang");
+                idBarang.appendChild(doc.createTextNode(catatan.getBarang().getId()));
+                produksi.appendChild(idBarang);
 
                 org.w3c.dom.Element kondisiBarang = doc.createElement("Kondisi_Barang");
                 kondisiBarang.appendChild(doc.createTextNode(catatan.getBarang().getCondition()));
-                rootElement.appendChild(kondisiBarang);
+                produksi.appendChild(kondisiBarang);
 
-                root.appendChild(rootElement);
+                org.w3c.dom.Element tanggal = doc.createElement("Tanggal_Produksi");
+                tanggal.appendChild(doc.createTextNode(catatan.getDate().toString()));
+                produksi.appendChild(tanggal);
+
+                root.appendChild(produksi);
+            }
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File("dataProduksi.xml"));
+
+            transformer.transform(source, result);
+
+        } catch (TransformerConfigurationException exx) {
+            System.out.println(exx.getMessage());
+        } catch (TransformerException exxx) {
+            System.out.println(exxx.getMessage());
+        }
+    }
+
+    public static void CatatMesinBaru(Mesin mesin) throws IOException, SAXException, ParserConfigurationException {
+        XStream stream = new XStream(new StaxDriver());
+        stream.alias("Mesin", Mesin.class);
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.parse("dataMesin.xml");
+        org.w3c.dom.Element root = doc.getDocumentElement();
+
+        List<Mesin> pencatatanList = new ArrayList<>();
+        pencatatanList.add(mesin);
+        try
+        {
+            for (Mesin catatan: pencatatanList)
+            {
+                org.w3c.dom.Element rootElement = doc.createElement("Pencatatan");
+
+                org.w3c.dom.Element Mesin = doc.createElement("Mesin");
+
+                Mesin.appendChild(doc.createTextNode(catatan.getNama()));
+
+                root.appendChild(Mesin);
             }
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -87,11 +134,66 @@ public class Pencatatan
 
             transformer.transform(source, result);
 
-        } catch (TransformerConfigurationException exx) {
+        }
+        catch (TransformerConfigurationException exx)
+        {
             System.out.println(exx.getMessage());
-        } catch (TransformerException exxx) {
+        } catch (TransformerException exxx)
+        {
             System.out.println(exxx.getMessage());
         }
+
+    }
+
+    public static void CatatMesinBaruBanget(Mesin mesin) throws IOException, SAXException, ParserConfigurationException, TransformerException {
+
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.newDocument();
+        org.w3c.dom.Element rootElement = doc.createElement("Pencatatan");
+        doc.appendChild(rootElement);
+
+        org.w3c.dom.Element Mesin = doc.createElement("Mesin");
+        rootElement.appendChild(Mesin);
+        Mesin.appendChild(doc.createTextNode(mesin.getNama()));
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File("dataMesin.xml"));
+
+        transformer.transform(source, result);
+
+    }
+
+    public void catatProduksiBaruBanget() throws ParserConfigurationException, TransformerException {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.newDocument();
+        org.w3c.dom.Element rootElement = doc.createElement("Pencatatan");
+        doc.appendChild(rootElement);
+
+        org.w3c.dom.Element produksi = doc.createElement("Produksi");
+        rootElement.appendChild(produksi);
+
+        org.w3c.dom.Element mesin = doc.createElement("Mesin");
+        mesin.appendChild(doc.createTextNode(this.mesin.getNama()));
+        produksi.appendChild(mesin);
+
+        org.w3c.dom.Element idBarang = doc.createElement("Id_Barang");
+        idBarang.appendChild(doc.createTextNode(this.barang.getId()));
+        produksi.appendChild(idBarang);
+
+        org.w3c.dom.Element kondisiBarang = doc.createElement("Kondisi_Barang");
+        kondisiBarang.appendChild(doc.createTextNode(this.barang.getCondition()));
+        produksi.appendChild(kondisiBarang);
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File("dataProduksi.xml"));
+
+        transformer.transform(source, result);
     }
 
 

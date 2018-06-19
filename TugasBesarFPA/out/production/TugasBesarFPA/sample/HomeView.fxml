@@ -1,27 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDialog?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="514.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeViewController">
+<AnchorPane prefHeight="523.0" prefWidth="1184.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeViewController">
    <children>
       <JFXBadge layoutX="256.0" layoutY="56.0" />
 
       <JFXDialog layoutX="348.0" layoutY="135.0" />
-      <Pane layoutY="-4.0" prefHeight="77.0" prefWidth="780.0" style="-fx-background-color: #3498db;">
+      <Pane prefHeight="48.0" prefWidth="1190.0" style="-fx-background-color: #3498db;">
          <children>
-            <Label layoutX="25.0" layoutY="29.0" text="Dashboard" textFill="WHITE">
+            <Label layoutX="490.0" layoutY="12.0" text="Dashboard" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
+            <JFXButton fx:id="TotalProduksi1" layoutX="1091.0" layoutY="3.0" minWidth="47.0" prefHeight="41.0" prefWidth="47.0">
+               <graphic>
+                  <ImageView fx:id="btnHome" fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@home.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
       </Pane>
-      <JFXListView layoutY="73.0" prefHeight="442.0" prefWidth="161.0" style="-fx-background-color: #7f8c8d;" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="479.0" layoutX="-2.0" layoutY="54.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="5.0" width="207.0">
+         <effect>
+            <Blend />
+         </effect></Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="130.0" layoutX="274.0" layoutY="275.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="230.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9b59b6" height="71.0" layoutX="273.0" layoutY="205.0" stroke="WHITE" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="230.0" />
+      <ImageView fitHeight="71.0" fitWidth="69.0" layoutX="288.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@man.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="219.0" layoutX="559.0" layoutY="273.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="267.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2ecc71" height="71.0" layoutX="559.0" layoutY="204.0" stroke="WHITE" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="265.0" />
+      <Label layoutX="369.0" layoutY="227.0" text="Dimastyo" textFill="#fcf2f2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="327.0" layoutY="326.0" text="Production Manager" textFill="#403d3d">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="21.0" fitWidth="38.0" layoutX="291.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@business-person-silhouette-wearing-tie.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="327.0" layoutY="356.0" prefHeight="15.0" prefWidth="173.0" text="Universitas Islam Indonesia" textFill="#403d3d">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="21.0" fitWidth="38.0" layoutX="291.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@graduate-student-avatar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="71.0" fitWidth="69.0" layoutX="574.0" layoutY="227.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@checklist.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="652.0" layoutY="227.0" text="ToDo" textFill="#fcf2f2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ListView layoutX="568.0" layoutY="306.0" prefHeight="170.0" prefWidth="241.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="86.0" layoutX="218.0" layoutY="105.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="306.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="116.0" layoutX="894.0" layoutY="277.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="222.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e74c3c" height="73.0" layoutX="896.0" layoutY="210.0" stroke="WHITE" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="218.0" />
+      <ImageView fitHeight="71.0" fitWidth="69.0" layoutX="912.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@time.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="996.0" layoutY="233.0" text="Waktu" textFill="#fcf2f2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="948.0" layoutY="318.0" text="Kamis, 14 Juni 2018" textFill="#403d3d">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="21.0" fitWidth="38.0" layoutX="912.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@calendar.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="948.0" layoutY="348.0" prefHeight="15.0" prefWidth="173.0" text="17: 00" textFill="#403d3d">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="21.0" fitWidth="38.0" layoutX="912.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@clock.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9b59b6" height="118.0" layoutX="239.0" layoutY="57.0" stroke="WHITE" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="122.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="86.0" layoutX="534.0" layoutY="103.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="306.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2ecc71" height="118.0" layoutX="555.0" layoutY="55.0" stroke="WHITE" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="122.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="86.0" layoutX="848.0" layoutY="105.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="306.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e74c3c" height="118.0" layoutX="869.0" layoutY="57.0" stroke="WHITE" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeMiterLimit="20.0" strokeType="OUTSIDE" width="122.0" />
+      <Label layoutX="400.0" layoutY="117.0" text="Total Produksi" textFill="#403d3d">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="429.0" layoutY="139.0" text="400" textFill="#403d3d">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="726.0" layoutY="117.0" text="Ouput OK" textFill="#403d3d">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="748.0" layoutY="139.0" text="285" textFill="#403d3d">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="1061.0" layoutY="117.0" text="Rejected" textFill="#403d3d">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="1081.0" layoutY="139.0" text="115" textFill="#403d3d">
+         <font>
+            <Font size="12.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="62.0" layoutY="64.0" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
+      <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@add-button-inside-black-circle.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="62.0" layoutY="103.0" prefHeight="32.0" prefWidth="137.0" text="Lihat Statistik" />
+      <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@line-chart.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="TotalProduksi" layoutX="256.0" layoutY="72.0">
+         <graphic>
+            <ImageView fitHeight="71.0" fitWidth="69.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@settings-work-tool.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="eeeess1" layoutX="571.0" layoutY="68.0">
+         <graphic>
+            <ImageView fx:id="OuputOk" fitHeight="71.0" fitWidth="69.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@check-sign.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="Rejected" layoutX="895.0" layoutY="83.0">
+         <graphic>
+            <ImageView fitHeight="69.0" fitWidth="52.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@delete.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>
