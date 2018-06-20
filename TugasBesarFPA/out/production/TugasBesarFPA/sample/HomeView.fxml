@@ -25,9 +25,9 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="TotalProduksi1" layoutX="1091.0" layoutY="3.0" minWidth="47.0" prefHeight="41.0" prefWidth="47.0">
+            <JFXButton fx:id="btnHome" layoutX="1091.0" layoutY="3.0" minWidth="47.0" prefHeight="41.0" prefWidth="47.0">
                <graphic>
-                  <ImageView fx:id="btnHome" fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="" fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@home.png" />
                      </image>
@@ -153,7 +153,7 @@
             <Font size="12.0" />
          </font>
       </Label>
-      <JFXButton layoutX="62.0" layoutY="64.0" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
+      <JFXButton fx:id="inputData" layoutX="62.0" layoutY="64.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
       <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@add-button-inside-black-circle.png" />
@@ -165,7 +165,7 @@
             <Image url="@line-chart.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="TotalProduksi" layoutX="256.0" layoutY="72.0">
+      <JFXButton fx:id="btnTotalProduksi" layoutX="256.0" layoutY="72.0" onAction="#btnTototalProduksiOnActionEvent">
          <graphic>
             <ImageView fitHeight="71.0" fitWidth="69.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -174,16 +174,16 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="eeeess1" layoutX="571.0" layoutY="68.0">
+      <JFXButton fx:id="btnTotalOuputOk" layoutX="571.0" layoutY="68.0" onAction="#btnTotalOuputOkOnActionEvent">
          <graphic>
-            <ImageView fx:id="OuputOk" fitHeight="71.0" fitWidth="69.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="71.0" fitWidth="69.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@check-sign.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton fx:id="Rejected" layoutX="895.0" layoutY="83.0">
+      <JFXButton fx:id="btnTotalOuputRejected" layoutX="895.0" layoutY="83.0" onAction="#btnOutputRejectedOnActionEvent">
          <graphic>
             <ImageView fitHeight="69.0" fitWidth="52.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                <image>

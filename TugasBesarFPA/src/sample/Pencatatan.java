@@ -2,6 +2,8 @@ package sample;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -222,6 +224,26 @@ public class Pencatatan
                 nOuputOk+=1;
         }
         return nOuputOk;
+    }
+
+    public static ObservableList<DataProduksi> getAllProduksi() throws IOException, SAXException, ParserConfigurationException {
+        ObservableList<DataProduksi> listProduksi =FXCollections.observableArrayList();
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.parse("dataProduksi.xml");
+        NodeList produksi = doc.getElementsByTagName("Produksi");
+        for (int i=0; i<produksi.getLength(); i++)
+        {
+            DataProduksi dp = new DataProduksi();
+            Node node = produksi.item(i);
+            org.w3c.dom.Element elemen = (org.w3c.dom.Element) node;
+            dp.setMesin(elemen.getElementsByTagName("Mesin").item(0).getTextContent());
+            dp.setIdBarang(elemen.getElementsByTagName("Id_Barang").item(0).getTextContent());
+            dp.setKondisi_Barang(elemen.getElementsByTagName("Kondisi_Barang").item(0).getTextContent());
+            dp.setTglProduksi(elemen.getElementsByTagName("Tanggal_Produksi").item(0).getTextContent());
+            listProduksi.add(dp);
+        }
+        return listProduksi;
     }
 
 

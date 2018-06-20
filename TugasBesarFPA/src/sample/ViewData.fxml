@@ -4,9 +4,8 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDialog?>
 <?import com.jfoenix.controls.JFXListView?>
-<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
@@ -20,21 +19,21 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewDataController">
    <children>
-      <AnchorPane prefHeight="523.0" prefWidth="1184.0" style="-fx-background-color: #ecf0f1;">
+      <AnchorPane prefHeight="538.0" prefWidth="1237.0" style="-fx-background-color: #ecf0f1;">
          <children>
             <JFXBadge layoutX="256.0" layoutY="56.0" />
       
             <JFXDialog layoutX="348.0" layoutY="135.0" />
-            <Pane prefHeight="48.0" prefWidth="1190.0" style="-fx-background-color: #3498db;">
+            <Pane prefHeight="48.0" prefWidth="1237.0" style="-fx-background-color: #3498db;">
                <children>
                   <Label layoutX="490.0" layoutY="12.0" text="Dashboard" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="TotalProduksi1" layoutX="1091.0" layoutY="3.0" minWidth="47.0" prefHeight="41.0" prefWidth="47.0">
+                  <JFXButton fx:id="btnHome" layoutX="1149.0" layoutY="4.0" minWidth="47.0" onAction="#btnHomeOnAction" prefHeight="41.0" prefWidth="47.0">
                      <graphic>
-                        <ImageView fx:id="btnHome" fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@home.png" />
                            </image>
@@ -43,12 +42,12 @@
                   </JFXButton>
                </children>
             </Pane>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="479.0" layoutX="-2.0" layoutY="54.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="5.0" width="207.0">
+            <Rectangle fx:id="" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="479.0" layoutX="-2.0" layoutY="54.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="5.0" width="207.0">
                <effect>
                   <Blend />
                </effect>
             </Rectangle>
-            <JFXButton layoutX="62.0" layoutY="64.0" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
+            <JFXButton fx:id="inputData" layoutX="62.0" layoutY="64.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
             <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@add-button-inside-black-circle.png" />
@@ -62,7 +61,7 @@
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3498db" height="103.0" layoutX="267.0" layoutY="106.0" opacity="0.6" stroke="#3498db" strokeDashOffset="9.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="540.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3498db" height="121.0" layoutX="294.0" layoutY="68.0" stroke="#3498db" strokeDashOffset="9.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="124.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="235.0" layoutX="863.0" layoutY="153.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="291.0">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="237.0" layoutX="862.0" layoutY="152.0" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="340.0">
                <stroke>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
@@ -72,12 +71,10 @@
                   </RadialGradient>
                </stroke>
             </Rectangle>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2ecc71" height="73.0" layoutX="862.0" layoutY="100.0" stroke="#2ecc71" strokeDashOffset="9.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="293.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2ecc71" height="75.0" layoutX="861.0" layoutY="99.0" stroke="#2ecc71" strokeDashOffset="9.0" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="342.0" />
             <JFXListView layoutX="262.0" layoutY="228.0" prefHeight="281.0" prefWidth="550.0" />
-            <JFXRadioButton fx:id="radio1" layoutX="450.0" layoutY="165.0" text="Id 1" textFill="WHITE" />
-            <JFXRadioButton fx:id="radio11" layoutX="515.0" layoutY="165.0" text="Id 1" textFill="WHITE" />
-            <JFXTextField layoutX="576.0" layoutY="157.0" />
-            <JFXButton layoutX="740.0" layoutY="161.0" style="-fx-background-color: #3498db;" text="Cari" textFill="WHITE" />
+            <JFXTextField fx:id="txtCari" layoutX="474.0" layoutY="160.0" prefHeight="26.0" prefWidth="174.0" />
+            <JFXButton fx:id="btnCari" layoutX="667.0" layoutY="159.0" onAction="#btnCariOnAction" style="-fx-background-color: #3498db;" text="Cari" textFill="WHITE" />
             <ImageView fitHeight="41.0" fitWidth="53.0" layoutX="887.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icon.png" />
@@ -88,31 +85,35 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutX="979.0" layoutY="203.0" text="Label" />
+            <Label fx:id="lblTanggal" layoutX="979.0" layoutY="203.0" />
             <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="919.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@clock-circular-outline.png" />
                </image>
             </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#686767" height="2.0" layoutX="882.0" layoutY="234.0" opacity="0.1" stroke="BLACK" strokeType="INSIDE" width="251.0" />
-            <Label layoutX="979.0" layoutY="311.0" text="Label" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#686767" height="3.0" layoutX="882.0" layoutY="233.0" opacity="0.1" stroke="BLACK" strokeType="INSIDE" width="303.0" />
+            <Label fx:id="lblStatus" layoutX="979.0" layoutY="311.0" />
             <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="919.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@exclamation.png" />
                </image>
             </ImageView>
-            <Label layoutX="979.0" layoutY="260.0" text="Label" />
+            <Label fx:id="lblMesin" layoutX="979.0" layoutY="260.0" />
             <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="919.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@settings-work-tool%20(1).png" />
+                  <Image url="@settings-work-tool (1).png" />
                </image>
             </ImageView>
-            <JFXTreeTableView layoutX="261.0" layoutY="230.0" prefHeight="281.0" prefWidth="550.0" />
             <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="319.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@magnifier-tool.png" />
                </image>
             </ImageView>
+            <JFXListView fx:id="tblData" layoutX="262.0" layoutY="228.0" prefHeight="281.0" prefWidth="550.0">
+               <stylesheets>
+                  <URL value="@caspian.css" />
+                  <URL value="@style.css" />
+               </stylesheets></JFXListView>
          </children>
       </AnchorPane>
    </children>

@@ -32,9 +32,9 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <JFXButton fx:id="TotalProduksi1" layoutX="1091.0" layoutY="3.0" minWidth="47.0" prefHeight="41.0" prefWidth="47.0">
+                  <JFXButton fx:id="btnHome" layoutX="1091.0" layoutY="3.0" minWidth="47.0" onAction="#btnHomeOnAction" prefHeight="41.0" prefWidth="47.0">
                      <graphic>
-                        <ImageView fx:id="btnHome" fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="" fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@home.png" />
                            </image>
@@ -84,7 +84,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <JFXButton layoutX="62.0" layoutY="64.0" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
+            <JFXButton fx:id="inputData" layoutX="62.0" layoutY="64.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
             <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@add-button-inside-black-circle.png" />

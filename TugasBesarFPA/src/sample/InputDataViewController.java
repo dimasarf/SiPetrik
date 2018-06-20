@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.fxml.LoadException;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -38,7 +39,10 @@ public class InputDataViewController implements Initializable
     private JFXProgressBar progressBar;
     @FXML
     private Button btnSubmit;
-
+    @FXML
+    private JFXButton inputData;
+    @FXML
+    private JFXButton btnHome;
 
     BackGroundWorker worker;
     private  ToggleGroup group;
@@ -128,5 +132,21 @@ public class InputDataViewController implements Initializable
         {
             btnSubmit.setDisable(false);
         }
+    }
+
+    @FXML
+    public void inputDataOnAction(ActionEvent e)
+    {
+        NavMenu.TambahData();
+        Stage stageToClose = (Stage) inputData.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    public void btnHomeOnAction(ActionEvent e)
+    {
+        NavMenu.Home();
+        Stage stageToClose = (Stage) btnHome.getScene().getWindow();
+        stageToClose.close();
     }
 }
