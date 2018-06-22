@@ -20,7 +20,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("HomeView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ViewOutputMesin.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
@@ -34,7 +34,7 @@ public class Main extends Application {
         //Pencatatan.CatatMesinBaru(mesin2);
         //Mesin mesin3 = new Mesin("fxpa3");
         //Pencatatan.CatatMesinBaru(mesin3);
-        System.out.println("tes");
+        //System.out.println(5/2);
         launch(args);
 
     }

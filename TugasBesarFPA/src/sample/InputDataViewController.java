@@ -17,8 +17,9 @@ import org.xml.sax.SAXException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.util.Date;
-import java.util.ResourceBundle;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class InputDataViewController implements Initializable
 {
@@ -106,10 +107,10 @@ public class InputDataViewController implements Initializable
             int bulan = tglProduksi.getValue().getMonthValue();
             int tahun = tglProduksi.getValue().getYear();
             String idBarang = txtIdBarang.getText();
-            Date tanggal = new Date(tahun, bulan, tgl, jam, menit, detik);
-
+            Calendar cal = new GregorianCalendar(Locale.ENGLISH);
+            cal.set(tahun, bulan, tgl, jam,menit, detik);
             Mesin mesin = new Mesin(namaMesin);
-            mesin.produksiBarang(status, idBarang, tanggal);
+            mesin.produksiBarang(status, idBarang, cal.getTime());
             AlertBox.display("Data berhasil disimpan!");
         } catch (IOException xe) {
             AlertBox.display("Data gagal disimpan");

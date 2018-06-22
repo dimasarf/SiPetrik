@@ -67,7 +67,6 @@ public class ViewDataController implements Initializable
     {
         try {
             tblData.getItems().addAll(Pencatatan.getAllProduksi());
-
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SAXException e) {
