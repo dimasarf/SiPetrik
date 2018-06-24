@@ -34,35 +34,64 @@ public class Statistik
     public static double medianOuputOk(List<OutputMesin> list)
     {
         double median = 0;
+        List<OutputMesin> list2 = list;
         BeanComparator bc = new BeanComparator(OutputMesin.class, "getJumlahBarangOK");
-        Collections.sort(list, bc);
-        if(list.size()%2 == 0)
+        Collections.sort(list2, bc);
+        if(list2.size()%2 == 0)
         {
-            median = (list.get(list.size()/2).getJumlahBarangOK() + list.get(list.size()/2 -1 ).getJumlahBarangOK())/2;
+            median = (list2.get(list2.size()/2).getJumlahBarangOK() + list2.get(list2.size()/2 -1 ).getJumlahBarangOK())/2;
         }
         else
         {
-            median = (list.get(list.size()/2).getJumlahBarangOK());
+            median = (list2.get(list2.size()/2).getJumlahBarangOK());
         }
-        return median;
+        return Math.round(median);
     }
 
 
     public static double medianOuputReject(List<OutputMesin> list)
     {
         double median = 0;
+        List<OutputMesin> list2 = list;
         BeanComparator bc = new BeanComparator(OutputMesin.class, "getJumlahBarangReject");
-        Collections.sort(list, bc);
-        if(list.size()%2 == 0)
+        Collections.sort(list2, bc);
+        if(list2.size()%2 == 0)
         {
-            median = (list.get(list.size()/2).getJumlahBarangReject() + list.get(list.size()/2 -1 ).getJumlahBarangReject())/2;
+            median = (list2.get(list2.size()/2).getJumlahBarangReject() + list2.get(list2.size()/2 -1 ).getJumlahBarangReject())/2;
         }
         else
         {
-            median = (list.get(list.size()/2).getJumlahBarangReject())/2;
+            median = (list2.get(list2.size()/2).getJumlahBarangReject());
         }
-        return median;
+        return Math.round(median);
     }
 
+    public static OutputMesin getModusReject(List<OutputMesin> list)
+    {
+        List<OutputMesin> list2 = list;
+        BeanComparator bc = new BeanComparator(OutputMesin.class, "getJumlahBarangReject");
+        Collections.sort(list2, bc);
+        return list2.get(list2.size() - 1 );
+    }
+
+    public static double getP90OK(List<OutputMesin> list)
+    {
+        List<OutputMesin> list2 = list;
+        BeanComparator bc = new BeanComparator(OutputMesin.class, "getJumlahBarangOK");
+        Collections.sort(list2, bc);
+        double letak = (90 * (list2.size()))/100;
+        int a = (int) letak;
+        double b = letak - a;
+
+        return  0;
+    }
+
+    public static OutputMesin getModusOk(List<OutputMesin> list)
+    {
+        List<OutputMesin> list2 = list;
+        BeanComparator bc = new BeanComparator(OutputMesin.class, "getJumlahBarangOK");
+        Collections.sort(list2, bc);
+        return list2.get(list2.size() - 1 );
+    }
 
 }

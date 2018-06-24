@@ -38,6 +38,7 @@ public class Pencatatan
         this.mesin = mesin;
         this.barang = barang;
         this.date = date;
+        System.out.println(date);
     }
 
 

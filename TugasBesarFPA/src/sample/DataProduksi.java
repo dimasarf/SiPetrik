@@ -1,8 +1,13 @@
 package sample;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class DataProduksi
 {
     private String Id_Barang, Mesin, Kondisi_Barang, Tanggal_Produksi;
+    private Date tglProduksi;
 
     public String getIdBarang() {
         return Id_Barang;
@@ -28,7 +33,8 @@ public class DataProduksi
         Kondisi_Barang = kondisi_Barang;
     }
 
-    public String getTglProduksi() {
+    public String getTglProduksi()
+    {
         return Tanggal_Produksi;
     }
 
@@ -39,5 +45,14 @@ public class DataProduksi
     @Override
     public String toString() {
         return this.getIdBarang();
+    }
+
+    public void setTglProduksi()
+    {
+        try {
+            this.tglProduksi = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(Tanggal_Produksi);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

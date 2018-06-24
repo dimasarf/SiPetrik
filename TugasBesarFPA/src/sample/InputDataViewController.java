@@ -104,10 +104,11 @@ public class InputDataViewController implements Initializable
             int menit = Integer.parseInt(this.menit.getValue().toString());
             int detik = Integer.parseInt(this.detik.getValue().toString());
             int tgl = tglProduksi.getValue().getDayOfMonth();
-            int bulan = tglProduksi.getValue().getMonthValue();
+            int bulan = tglProduksi.getValue().getMonthValue()-1;
             int tahun = tglProduksi.getValue().getYear();
+            System.out.println(bulan);
             String idBarang = txtIdBarang.getText();
-            Calendar cal = new GregorianCalendar(Locale.ENGLISH);
+            Calendar cal = new GregorianCalendar();
             cal.set(tahun, bulan, tgl, jam,menit, detik);
             Mesin mesin = new Mesin(namaMesin);
             mesin.produksiBarang(status, idBarang, cal.getTime());
@@ -150,4 +151,7 @@ public class InputDataViewController implements Initializable
         Stage stageToClose = (Stage) btnHome.getScene().getWindow();
         stageToClose.close();
     }
+
+
+
 }

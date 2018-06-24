@@ -10,7 +10,8 @@ public class OutputMesin
         this.Mesin = mesin;
     }
 
-    public void setJumlahBarangOK(int jumlahBarangOK) {
+    public void setJumlahBarangOK(int jumlahBarangOK)
+    {
         JumlahBarangOK += jumlahBarangOK;
     }
 

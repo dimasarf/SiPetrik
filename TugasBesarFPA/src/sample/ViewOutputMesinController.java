@@ -12,6 +12,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.swing.text.TableView;
@@ -99,24 +102,20 @@ public class ViewOutputMesinController implements Initializable
 
     public void populateItemToTable()
     {
-        Set<String> set=new HashSet<>();
-        Set<String> duplicateElements=new HashSet<>();
 
         try {
-            for (DataProduksi dp : Pencatatan.getAllProduksi())
-            {
-                if(!set.add(dp.getMesin()))
-                {
-                    duplicateElements.add(dp.getMesin());
-                }
-            }
-            List<String> duplicateElementsList=new ArrayList<>(duplicateElements);
             ObservableList<OutputMesin> om = FXCollections.observableArrayList();
-            Collections.sort(duplicateElementsList);
-            for (String s : duplicateElementsList)
+            NodeList nama2Mesin = XMLReader.getNode("dataMesin.xml");
+            for(int i = 0; i < nama2Mesin.getLength(); i++)
             {
-                OutputMesin mesin = new OutputMesin(s);
-                om.add(mesin);
+                Node node = nama2Mesin.item(i);
+                if(node.getNodeType() == Node.ELEMENT_NODE)
+                {
+                    Element elemen = (Element) node;
+                    OutputMesin mes2 = new OutputMesin(elemen.getElementsByTagName("namaMesin").item(0).getTextContent());
+                    om.add(mes2);
+                }
+
             }
 
             for (OutputMesin om2 : om)
@@ -137,8 +136,10 @@ public class ViewOutputMesinController implements Initializable
             tblData.setItems(om);
             lblRata2OK.setText(String.valueOf(Statistik.HitungRata2OK(om)));
             lblMedianOK.setText(String.valueOf(Statistik.medianOuputOk(om)));
+            lblModusOk.setText(String.valueOf(Statistik.getModusOk(om).getJumlahBarangOK()));
             lblRata2Rj.setText(String.valueOf(Statistik.HitungRata2Reject(om)));
             lblMedianRj.setText(String.valueOf(Statistik.medianOuputReject(om)));
+            lblModusRj.setText(String.valueOf(Statistik.getModusOk(om).getJumlahBarangReject()));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -151,23 +152,20 @@ public class ViewOutputMesinController implements Initializable
 
 
     public void populateItemToTable(String date) {
-        Set<String> set=new HashSet<>();
-        Set<String> duplicateElements=new HashSet<>();
+
         try {
-            for (DataProduksi dp : Pencatatan.getAllProduksi())
-            {
-                if(!set.add(dp.getMesin()))
-                {
-                    duplicateElements.add(dp.getMesin());
-                }
-            }
-            List<String> duplicateElementsList=new ArrayList<>(duplicateElements);
             ObservableList<OutputMesin> om = FXCollections.observableArrayList();
-            Collections.sort(duplicateElementsList);
-            for (String s : duplicateElementsList)
+            NodeList nama2Mesin = XMLReader.getNode("dataMesin.xml");
+            for(int i = 0; i < nama2Mesin.getLength(); i++)
             {
-                OutputMesin mesin = new OutputMesin(s);
-                om.add(mesin);
+                Node node = nama2Mesin.item(i);
+                if(node.getNodeType() == Node.ELEMENT_NODE)
+                {
+                    Element elemen = (Element) node;
+                    OutputMesin mes2 = new OutputMesin(elemen.getElementsByTagName("namaMesin").item(0).getTextContent());
+                    om.add(mes2);
+                }
+
             }
 
             for (OutputMesin om2 : om)
@@ -197,8 +195,10 @@ public class ViewOutputMesinController implements Initializable
             tblData.setItems(om);
             lblRata2OK.setText(String.valueOf(Statistik.HitungRata2OK(om)));
             lblMedianOK.setText(String.valueOf(Statistik.medianOuputOk(om)));
+            lblModusOk.setText(String.valueOf(Statistik.getModusOk(om).getJumlahBarangOK()));
             lblRata2Rj.setText(String.valueOf(Statistik.HitungRata2Reject(om)));
             lblMedianRj.setText(String.valueOf(Statistik.medianOuputReject(om)));
+            lblModusRj.setText(String.valueOf(Statistik.getModusOk(om).getJumlahBarangReject()));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -206,11 +206,6 @@ public class ViewOutputMesinController implements Initializable
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
-    }
-
-    public void pilihanOnAction(ActionEvent e)
-    {
-
     }
 
     public void tglOnAction(ActionEvent event)
