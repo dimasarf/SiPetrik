@@ -27,6 +27,7 @@ public class DataProduksi
 
     public void setTglProduksi(String tglProduksi) {
         Tanggal_Produksi = tglProduksi;
+        setTglProduksi();
     }
 
     public void setKondisi_Barang(String kondisi_Barang) {
@@ -54,5 +55,17 @@ public class DataProduksi
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    public Date getTanggal_Produksi() {
+        return tglProduksi;
+    }
+
+    public String getShorterDate(Date tgl)
+    {
+        String date;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        date = simpleDateFormat.format(tgl);
+        return date;
     }
 }

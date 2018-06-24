@@ -149,8 +149,6 @@ public class ViewOutputMesinController implements Initializable
         }
     }
 
-
-
     public void populateItemToTable(String date) {
 
         try {

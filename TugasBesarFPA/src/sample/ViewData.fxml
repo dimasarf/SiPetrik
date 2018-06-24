@@ -41,18 +41,18 @@
                   </JFXButton>
                </children>
             </Pane>
-            <Rectangle fx:id="" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="479.0" layoutX="-2.0" layoutY="54.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="5.0" width="207.0">
+            <Rectangle fx:id="" arcHeight="5.0" arcWidth="5.0" fill="#333645" height="492.0" layoutX="-6.0" layoutY="49.0" stroke="#333645" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="214.0">
                <effect>
                   <Blend />
                </effect>
             </Rectangle>
-            <JFXButton fx:id="inputData" layoutX="62.0" layoutY="64.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
+            <JFXButton fx:id="inputData" layoutX="62.0" layoutY="64.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Tambah Data Baru" textFill="WHITE" />
             <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@add-button-inside-black-circle.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="62.0" layoutY="103.0" prefHeight="32.0" prefWidth="137.0" text="Lihat Statistik" />
+            <JFXButton layoutX="62.0" layoutY="103.0" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Lihat Statistik" textFill="WHITE" />
             <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@line-chart.png" />

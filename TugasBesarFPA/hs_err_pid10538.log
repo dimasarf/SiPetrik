@@ -1,0 +1,102 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f2c63dd6fb2, pid=10538, tid=10591
+#
+# JRE version: Java(TM) SE Runtime Environment (9.0+11) (build 9.0.4+11)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (9.0.4+11, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x3fb2]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x42
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P" (or dumping to /home/dimas/TugasBesarFPA/core.10538)
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:/home/dimas/Downloads/idea-IC-181.4445.78/lib/idea_rt.jar=41427:/home/dimas/Downloads/idea-IC-181.4445.78/bin -Dfile.encoding=UTF-8 sample.Main
+
+Host: Intel(R) Core(TM) i7-4700HQ CPU @ 2.40GHz, 8 cores, 3G, Ubuntu 16.04.3 LTS
+Time: Sun Jun 24 22:25:30 2018 WIB elapsed time: 85233 seconds (0d 23h 40m 33s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f2c6416f000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=10591, stack(0x00007f2bf5eff000,0x00007f2bf6000000)]
+
+Stack: [0x00007f2bf5eff000,0x00007f2bf6000000],  sp=0x00007f2bf5ffd2c0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x3fb2]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x42
+C  [libjimage.so+0x4b8c]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x3c
+C  [libjimage.so+0x505a]  JIMAGE_FindResource+0xba
+V  [libjvm.so+0x5aae8e]  ClassPathImageEntry::open_stream(char const*, Thread*)+0x4e
+V  [libjvm.so+0x5ae0a0]  ClassLoader::load_class(Symbol*, bool, Thread*)+0x150
+V  [libjvm.so+0xcbcd34]  SystemDictionary::load_instance_class(Symbol*, Handle, Thread*)+0x554
+V  [libjvm.so+0xcbd8f1]  SystemDictionary::resolve_instance_class_or_null(Symbol*, Handle, Handle, Thread*)+0xa91
+V  [libjvm.so+0xcbec4b]  SystemDictionary::resolve_or_fail(Symbol*, Handle, Handle, bool, Thread*)+0x4b
+V  [libjvm.so+0x648c34]  ConstantPool::klass_at_impl(constantPoolHandle const&, int, bool, Thread*)+0x104
+V  [libjvm.so+0x82b1ca]  InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)+0x6a
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@9.0.4
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x83d60a]  JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)+0x47a
+V  [libjvm.so+0x83c788]  JavaCalls::call_static(JavaValue*, KlassHandle, Symbol*, Symbol*, JavaCallArguments*, Thread*)+0x138
+V  [libjvm.so+0xb5e961]  signal_thread_entry(JavaThread*, Thread*)+0x271
+V  [libjvm.so+0xcef338]  JavaThread::thread_main_inner()+0xd8
+V  [libjvm.so+0xb6e132]  thread_native_entry(Thread*)+0xf2
+C  [libpthread.so.0+0x76ba]  start_thread+0xca
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@9.0.4
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007f2c5893879c
+
+Register to memory mapping:
+
+RAX=0x00000000000089e0 is an unknown value
+RBX=0x000000000000cbc7 is an unknown value
+RCX=0x00007f2c63fed010: <offset 0x000000000021a010> in /home/dimas/Downloads/jdk-9.0.4/lib/libjimage.so at 0x00007f2c63dd3000
+RDX=0x00000000000089e0 is an unknown value
+RSP=0x00007f2bf5ffd2c0 is pointing into the stack for thread: 0x00007f2c6416f000
+RBP=0x00007f2bf5ffd2e0 is pointing into the stack for thread: 0x00007f2c6416f000
+RSI=0x0000000076100fd7 is an unknown value
+RDI=0x00007f2c63fed990: <offset 0x000000000021a990> in /home/dimas/Downloads/jdk-9.0.4/lib/libjimage.so at 0x00007f2c63dd3000
+R8 =0x000000000000fefd is an unknown value
+R9 =0x0000000000000028 is an unknown value
+R10=0x00007f2c641703b0 is an unknown value
+R11=0x00007f2c6ac1ce10: <offset 0x0000000000187e10> in /lib/x86_64-linux-gnu/libc.so.6 at 0x00007f2c6aa95000
+R12=0x00007f2c63fed990: <offset 0x000000000021a990> in /home/dimas/Downloads/jdk-9.0.4/lib/libjimage.so at 0x00007f2c63dd3000
+R13=0x00007f2bf5ffd390 is pointing into the stack for thread: 0x00007f2c6416f000
+R14=0x00007f2c5891601c is an unknown value
+R15=0x00007f2c6416f460 is an unknown value
+
+
+Registers:
+RAX=0x00000000000089e0, RBX=0x000000000000cbc7, RCX=0x00007f2c63fed010, RDX=0x00000000000089e0
+RSP=0x00007f2bf5ffd2c0, RBP=0x00007f2bf5ffd2e0, RSI=0x0000000076100fd7, RDI=0x00007f2c63fed990
+R8 =0x000000000000fefd, R9 =0x0000000000000028, R10=0x00007f2c641703b0, R11=0x00007f2c6ac1ce10
+R12=0x00007f2c63fed990, R13=0x00007f2bf5ffd390, R14=0x00007f2c5891601c, R15=0x00007f2c6416f460
+RIP=0x00007f2c63dd6fb2, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f2bf5ffd2c0)
+0x00007f2bf5ffd2c0:   00007f2c640202b0 0000000000000000
+0x00007f2bf5ffd2d0:   00007f2bf5ffd390 00007f2bf5ffe428
+0x00007f2bf5ffd2e0:   00007f2bf5ffd370 00007f2c63dd7b8c
+0x00007f2bf5ffd2f0:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007f2c63dd6fb2)
+0x00007f2c63dd6f92:   be 93 01 00 01 4c 89 ef 89 cb 49 89 d6 e8 9c ff
+0x00007f2c63dd6fa2:   ff ff 31 d2 49 8b 0c 24 4c 89 e7 f7 f3 48 63 c2
+0x00007f2c63dd6fb2:   41 8b 34 86 ff 51 20 83 f8 00 7f 12 74 30 f7 d0
+0x00007f2c63dd6fc2:   89 c2 5b 89 d0 41 5c 41 5d 41 5e 5d c3 90 4c 89 
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f2c64013000 JavaThread "DestroyJavaVM" [_thread_blocked, id=10541, stack(0x00007f2c6b7a7000,0x00007f2c6b8a7000)]
+  0x00007f2c64494000 JavaThread "JavaFX Application Thread" [_thread_in_native, id=10611, stack(0x00007f2bb8069000,0x00007f2bb816a000)]
+  0x00007f2c6448f800 JavaThread "InvokeLaterDispatcher" daemon [_thread_blocked, id=10610, stack(0x00007f2bf4074000,0x00007f2bf4175000)]
+  0x00007f2c6433e000 

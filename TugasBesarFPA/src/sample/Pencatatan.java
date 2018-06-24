@@ -24,6 +24,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -246,6 +248,58 @@ public class Pencatatan
         }
         return listProduksi;
     }
+
+    public static int getTotalOuputOKbyDate(String date)
+    {
+        int banyakBarangOk = 0;
+        String tglProduksi;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            for (DataProduksi dp: Pencatatan.getAllProduksi())
+            {
+                Date tglProduksi2 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(dp.getTglProduksi());
+                tglProduksi = simpleDateFormat.format(tglProduksi2);
+                if(tglProduksi.equals(date) && dp.getKondisi_Barang().equals("OK"))
+                    banyakBarangOk++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return banyakBarangOk;
+    }
+
+    public static int getTotalOuputRejectbyDate(String date)
+    {
+        int banyakBarangOk = 0;
+        String tglProduksi;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            for (DataProduksi dp: Pencatatan.getAllProduksi())
+            {
+                Date tglProduksi2 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(dp.getTglProduksi());
+                tglProduksi = simpleDateFormat.format(tglProduksi2);
+                System.out.println(tglProduksi);
+                if(tglProduksi.equals(date) && dp.getKondisi_Barang().equals("Rejected"))
+                    banyakBarangOk++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return banyakBarangOk;
+    }
+
 
 
 

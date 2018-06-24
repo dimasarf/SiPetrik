@@ -3,9 +3,8 @@
 <?import com.jfoenix.controls.JFXBadge?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDialog?>
-<?import javafx.scene.chart.AreaChart?>
-<?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
@@ -17,7 +16,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewStatController">
+<AnchorPane prefHeight="821.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewStatController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -26,14 +25,14 @@
                   <JFXBadge layoutX="256.0" layoutY="56.0" />
             
                   <JFXDialog layoutX="348.0" layoutY="135.0" />
-                  <Pane prefHeight="48.0" prefWidth="1190.0" style="-fx-background-color: #3498db;">
+                  <Pane prefHeight="48.0" prefWidth="1274.0" style="-fx-background-color: #3498db;">
                      <children>
                         <Label layoutX="490.0" layoutY="12.0" text="Dashboard" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <JFXButton fx:id="TotalProduksi1" layoutX="1091.0" layoutY="3.0" minWidth="47.0" prefHeight="41.0" prefWidth="47.0">
+                        <JFXButton fx:id="TotalProduksi1" layoutX="1161.0" layoutY="4.0" minWidth="47.0" prefHeight="41.0" prefWidth="47.0">
                            <graphic>
                               <ImageView fx:id="btnHome" fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -44,7 +43,7 @@
                         </JFXButton>
                      </children>
                   </Pane>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="559.0" layoutX="-7.0" layoutY="49.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" strokeWidth="5.0" width="217.0">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#333645" height="757.0" layoutX="-17.0" layoutY="48.0" stroke="#333645" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="238.0">
                      <effect>
                         <Blend />
                      </effect>
@@ -54,43 +53,27 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="62.0" layoutY="64.0" prefHeight="32.0" prefWidth="137.0" text="Tambah Data Baru" />
+                  <JFXButton layoutX="62.0" layoutY="64.0" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Tambah Data Baru" textFill="WHITE" />
                   <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@add-button-inside-black-circle.png" />
                      </image>
                   </ImageView>
-                  <JFXButton layoutX="62.0" layoutY="103.0" prefHeight="32.0" prefWidth="137.0" text="Lihat Statistik" />
+                  <JFXButton layoutX="62.0" layoutY="103.0" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Lihat Statistik" textFill="WHITE" />
                   <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@line-chart.png" />
                      </image>
                   </ImageView>
-                  <PieChart fx:id="pieChart" layoutX="665.0" layoutY="47.0" prefHeight="340.0" prefWidth="525.0" stylesheets="@style.css" title="Diagram Produksi" />
-                  <AreaChart layoutX="235.0" layoutY="56.0" prefHeight="332.0" prefWidth="473.0">
+                  <LineChart fx:id="okChart" layoutX="235.0" layoutY="58.0" prefHeight="381.0" prefWidth="549.0">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
                     <yAxis>
                       <NumberAxis side="LEFT" />
                     </yAxis>
-                  </AreaChart>
-                  <BarChart layoutX="708.0" layoutY="388.0" prefHeight="332.0" prefWidth="454.0">
-                     <xAxis>
-                        <CategoryAxis side="BOTTOM" />
-                     </xAxis>
-                     <yAxis>
-                        <NumberAxis side="LEFT" />
-                     </yAxis>
-                  </BarChart>
-                  <BarChart layoutX="245.0" layoutY="376.0" prefHeight="332.0" prefWidth="454.0">
-                     <xAxis>
-                        <CategoryAxis side="BOTTOM" />
-                     </xAxis>
-                     <yAxis>
-                        <NumberAxis side="LEFT" />
-                     </yAxis>
-                  </BarChart>
+                  </LineChart>
+                  <PieChart fx:id="pieChart" layoutX="710.0" layoutY="74.0" prefHeight="360.0" prefWidth="564.0" stylesheets="@style.css" title="Diagram Produksi" />
                </children>
             </AnchorPane>
          </children>
