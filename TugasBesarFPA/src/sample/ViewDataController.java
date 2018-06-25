@@ -45,6 +45,10 @@ public class ViewDataController implements Initializable
     private JFXButton btnCari;
     @FXML
     private JFXTextField txtCari;
+    @FXML
+    private JFXButton btnStat;
+    @FXML
+    private JFXButton btnOutput;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -132,4 +136,22 @@ public class ViewDataController implements Initializable
                 getSpesificCOndition();
         }
     }
+
+    @FXML
+    private void btnStatOnAction(ActionEvent event)
+    {
+        NavMenu.Statistik();
+        Stage stageToClose = (Stage) btnStat.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    private void btnOutputOnAction(ActionEvent event)
+    {
+        NavMenu.OutputMesin();
+        Stage stageToClose = (Stage) btnOutput.getScene().getWindow();
+        stageToClose.close();
+    }
+
+
 }

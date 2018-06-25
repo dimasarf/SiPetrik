@@ -46,6 +46,11 @@ public class HomeViewController implements Initializable
     private JFXButton inputData;
     @FXML
     private JFXButton btnHome;
+    @FXML
+    private JFXButton btnStat;
+    @FXML
+    private JFXButton btnOutput;
+
 
     @FXML
     private void TotalProduksiMouseClicked(ActionEvent event)
@@ -57,6 +62,22 @@ public class HomeViewController implements Initializable
         {
             System.out.println(e.getMessage());
         }
+    }
+
+    @FXML
+    private void btnStatOnAction(ActionEvent event)
+    {
+        NavMenu.Statistik();
+        Stage stageToClose = (Stage) btnStat.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    private void btnOutputOnAction(ActionEvent event)
+    {
+        NavMenu.OutputMesin();
+        Stage stageToClose = (Stage) btnOutput.getScene().getWindow();
+        stageToClose.close();
     }
 
     @Override

@@ -42,4 +42,38 @@ public class NavMenu
             System.out.println(e.getMessage());
         }
     }
+
+    public static void OutputMesin()
+    {
+        Parent root;
+        ViewDataController.dataToDisplay = "Rejected";
+        try
+        {
+            root = FXMLLoader.load(NavMenu.class.getResource("ViewOutputMesin.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch (IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public static void Statistik()
+    {
+        Parent root;
+        ViewDataController.dataToDisplay = "Rejected";
+        try
+        {
+            root = FXMLLoader.load(NavMenu.class.getResource("ViewStat.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch (IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
 }

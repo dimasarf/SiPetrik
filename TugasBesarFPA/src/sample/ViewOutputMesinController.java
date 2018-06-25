@@ -57,7 +57,10 @@ public class ViewOutputMesinController implements Initializable
     private Label lblMedianRj;
     @FXML
     private Label lblModusRj;
-
+    @FXML
+    private JFXButton btnStat;
+    @FXML
+    private JFXButton btnOutput;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -136,10 +139,10 @@ public class ViewOutputMesinController implements Initializable
             tblData.setItems(om);
             lblRata2OK.setText(String.valueOf(Statistik.HitungRata2OK(om)));
             lblMedianOK.setText(String.valueOf(Statistik.medianOuputOk(om)));
-            lblModusOk.setText(String.valueOf(Statistik.getModusOk(om).getJumlahBarangOK()));
+            lblModusOk.setText(String.valueOf(Statistik.getModusOk(om).getMesin()));
             lblRata2Rj.setText(String.valueOf(Statistik.HitungRata2Reject(om)));
             lblMedianRj.setText(String.valueOf(Statistik.medianOuputReject(om)));
-            lblModusRj.setText(String.valueOf(Statistik.getModusOk(om).getJumlahBarangReject()));
+            lblModusRj.setText(String.valueOf(Statistik.getModusReject(om).getMesin()));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -193,10 +196,10 @@ public class ViewOutputMesinController implements Initializable
             tblData.setItems(om);
             lblRata2OK.setText(String.valueOf(Statistik.HitungRata2OK(om)));
             lblMedianOK.setText(String.valueOf(Statistik.medianOuputOk(om)));
-            lblModusOk.setText(String.valueOf(Statistik.getModusOk(om).getJumlahBarangOK()));
+            lblModusOk.setText(String.valueOf(Statistik.getModusOk(om).getMesin()));
             lblRata2Rj.setText(String.valueOf(Statistik.HitungRata2Reject(om)));
             lblMedianRj.setText(String.valueOf(Statistik.medianOuputReject(om)));
-            lblModusRj.setText(String.valueOf(Statistik.getModusOk(om).getJumlahBarangReject()));
+            lblModusRj.setText(String.valueOf(Statistik.getModusReject(om).getMesin()));
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SAXException e) {
@@ -222,4 +225,22 @@ public class ViewOutputMesinController implements Initializable
         tgl.setVisible(false);
         populateItemToTable();
     }
+
+    @FXML
+    private void btnStatOnAction(ActionEvent event)
+    {
+        NavMenu.Statistik();
+        Stage stageToClose = (Stage) btnStat.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    private void btnOutputOnAction(ActionEvent event)
+    {
+        NavMenu.OutputMesin();
+        Stage stageToClose = (Stage) btnOutput.getScene().getWindow();
+        stageToClose.close();
+    }
+
+
 }

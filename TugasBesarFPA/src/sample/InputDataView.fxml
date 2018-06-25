@@ -84,13 +84,13 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <JFXButton fx:id="inputData" layoutX="62.0" layoutY="64.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Tambah Data Baru" textFill="WHITE" />
+            <JFXButton fx:id="inputData" layoutX="62.0" layoutY="64.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Data Baru" textFill="WHITE" />
             <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@add-button-inside-black-circle.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="62.0" layoutY="103.0" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Lihat Statistik" textFill="WHITE" />
+            <JFXButton fx:id="btnStat" layoutX="62.0" layoutY="103.0" onAction="#btnStatOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Statistik" textFill="WHITE" />
             <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@line-chart.png" />
@@ -107,6 +107,12 @@
             <JFXRadioButton fx:id="rejected" layoutX="1015.0" layoutY="382.0" onAction="#namaMesinOnAction" text="Rejected" />
             <JFXRadioButton fx:id="ok" layoutX="941.0" layoutY="382.0" onAction="#namaMesinOnAction" text="OK" />
             <JFXTextField fx:id="txtIdBarang" layoutX="941.0" layoutY="323.0" onAction="#namaMesinOnAction" promptText="Id Barang" />
+            <JFXButton fx:id="btnOutput" layoutX="61.0" layoutY="141.0" onAction="#btnOutputOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Output Mesin" textFill="WHITE" />
+            <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="13.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@settings-gears%20(1).png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

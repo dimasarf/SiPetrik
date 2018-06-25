@@ -1,10 +1,14 @@
 package sample;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXProgressBar;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
+import javafx.stage.Stage;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -26,11 +30,25 @@ public class ViewStatController implements Initializable
     private CategoryAxis X;
     @FXML
     private NumberAxis Y;
+    @FXML
+    private JFXButton btnStat;
+    @FXML
+    private JFXButton btnOutput;
+    @FXML
+    private JFXButton btnHome;
+    @FXML
+    private JFXButton inputData;
+    @FXML
+    private JFXProgressBar progressOK;
+    @FXML
+    private JFXProgressBar progressReject;
     private ObservableList<PieChart.Data> listPiechart = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
+        progressOK.setStyle("-fx-accent: #2ecc71;");
+        progressReject.setStyle("red-progress-bar: red;");
         showPieChartData();
         showOkLinechart();
     }
@@ -52,7 +70,9 @@ public class ViewStatController implements Initializable
     public void showOkLinechart()
     {
         XYChart.Series series = new XYChart.Series();
+        series.setName("Output OK");
         XYChart.Series series2 = new XYChart.Series();
+        series2.setName("Ouput Rejected");
         try {
             List<DataProduksi> list = new ArrayList<>(Pencatatan.getAllProduksi());
             BeanComparator bc = new BeanComparator(DataProduksi.class, "getTanggal_Produksi");
@@ -78,6 +98,38 @@ public class ViewStatController implements Initializable
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void btnStatOnAction(ActionEvent event)
+    {
+        NavMenu.Statistik();
+        Stage stageToClose = (Stage) btnStat.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    private void btnOutputOnAction(ActionEvent event)
+    {
+        NavMenu.OutputMesin();
+        Stage stageToClose = (Stage) btnOutput.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    public void btnHomeOnAction(ActionEvent e)
+    {
+        NavMenu.Home();
+        Stage stageToClose = (Stage) btnHome.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    public void inputDataOnAction(ActionEvent e)
+    {
+        NavMenu.TambahData();
+        Stage stageToClose = (Stage) inputData.getScene().getWindow();
+        stageToClose.close();
     }
 
 }

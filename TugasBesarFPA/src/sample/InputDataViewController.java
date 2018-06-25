@@ -44,6 +44,10 @@ public class InputDataViewController implements Initializable
     private JFXButton inputData;
     @FXML
     private JFXButton btnHome;
+    @FXML
+    private JFXButton btnStat;
+    @FXML
+    private JFXButton btnOutput;
 
     BackGroundWorker worker;
     private  ToggleGroup group;
@@ -152,6 +156,21 @@ public class InputDataViewController implements Initializable
         stageToClose.close();
     }
 
+    @FXML
+    private void btnStatOnAction(ActionEvent event)
+    {
+        NavMenu.Statistik();
+        Stage stageToClose = (Stage) btnStat.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    private void btnOutputOnAction(ActionEvent event)
+    {
+        NavMenu.OutputMesin();
+        Stage stageToClose = (Stage) btnOutput.getScene().getWindow();
+        stageToClose.close();
+    }
 
 
 }
