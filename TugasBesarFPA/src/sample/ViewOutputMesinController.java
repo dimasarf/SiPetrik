@@ -61,6 +61,10 @@ public class ViewOutputMesinController implements Initializable
     private JFXButton btnStat;
     @FXML
     private JFXButton btnOutput;
+    @FXML
+    private Label lblWaktuOK;
+    @FXML
+    private Label lblWaktuReject;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -137,9 +141,11 @@ public class ViewOutputMesinController implements Initializable
             }
             System.out.println(om);
             tblData.setItems(om);
+            lblWaktuOK.setText("Semua");
             lblRata2OK.setText(String.valueOf(Statistik.HitungRata2OK(om)));
             lblMedianOK.setText(String.valueOf(Statistik.medianOuputOk(om)));
             lblModusOk.setText(String.valueOf(Statistik.getModusOk(om).getMesin()));
+            lblWaktuReject.setText("Semua");
             lblRata2Rj.setText(String.valueOf(Statistik.HitungRata2Reject(om)));
             lblMedianRj.setText(String.valueOf(Statistik.medianOuputReject(om)));
             lblModusRj.setText(String.valueOf(Statistik.getModusReject(om).getMesin()));
@@ -194,9 +200,11 @@ public class ViewOutputMesinController implements Initializable
             }
             System.out.println(om);
             tblData.setItems(om);
+            lblWaktuOK.setText(String.valueOf(tgl.getValue()));
             lblRata2OK.setText(String.valueOf(Statistik.HitungRata2OK(om)));
             lblMedianOK.setText(String.valueOf(Statistik.medianOuputOk(om)));
             lblModusOk.setText(String.valueOf(Statistik.getModusOk(om).getMesin()));
+            lblWaktuReject.setText(String.valueOf(tgl.getValue()));
             lblRata2Rj.setText(String.valueOf(Statistik.HitungRata2Reject(om)));
             lblMedianRj.setText(String.valueOf(Statistik.medianOuputReject(om)));
             lblModusRj.setText(String.valueOf(Statistik.getModusReject(om).getMesin()));

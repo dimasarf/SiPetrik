@@ -84,7 +84,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="980.0" layoutY="209.0" text="Label" />
+                  <Label fx:id="lblWaktuOK" layoutX="980.0" layoutY="209.0" prefHeight="18.0" prefWidth="155.0" text="Label" />
                   <ImageView fitHeight="18.0" fitWidth="23.0" layoutX="920.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@clock-circular-outline.png" />
@@ -139,7 +139,7 @@
                         <Font size="20.0" />
                      </font>
                   </Label>
-                  <Label layoutX="979.0" layoutY="498.0" text="Label" />
+                  <Label fx:id="lblWaktuReject" layoutX="979.0" layoutY="498.0" prefHeight="18.0" prefWidth="147.0" text="Label" />
                   <ImageView fitHeight="18.0" fitWidth="23.0" layoutX="919.0" layoutY="498.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@clock-circular-outline%20(1).png" />
