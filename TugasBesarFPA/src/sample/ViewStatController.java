@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import org.xml.sax.SAXException;
 
@@ -42,13 +43,21 @@ public class ViewStatController implements Initializable
     private JFXProgressBar progressOK;
     @FXML
     private JFXProgressBar progressReject;
+    @FXML
+    private Label persenOK;
+    @FXML
+    private Label persenReject;
     private ObservableList<PieChart.Data> listPiechart = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        progressOK.setStyle("-fx-accent: #2ecc71;");
+        progressOK.setStyle("-fx-progress-colort: #2ecc71;");
         progressReject.setStyle("red-progress-bar: red;");
+        progressOK.setProgress((Statistik.getPersentase("OK") / 100));
+        persenOK.setText(Math.round((Statistik.getPersentase("OK")))+" %");
+        persenReject.setText(Math.round((Statistik.getPersentase("Rejected")))+" %");
+        progressReject.setProgress((Statistik.getPersentase("Rejected") / 100));
         showPieChartData();
         showOkLinechart();
     }

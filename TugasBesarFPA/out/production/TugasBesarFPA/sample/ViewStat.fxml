@@ -92,6 +92,8 @@
                         <Font name="Garuda" size="20.0" />
                      </font>
                   </Label>
+                  <Label fx:id="persenOK" layoutX="469.0" layoutY="580.0" text="Label" />
+                  <Label fx:id="persenReject" layoutX="471.0" layoutY="643.0" text="Label" />
                </children>
             </AnchorPane>
          </children>

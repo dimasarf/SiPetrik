@@ -1,5 +1,9 @@
 package sample;
 
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
@@ -92,6 +96,22 @@ public class Statistik
         BeanComparator bc = new BeanComparator(OutputMesin.class, "getJumlahBarangOK");
         Collections.sort(list2, bc);
         return list2.get(list2.size() - 1 );
+    }
+
+    public static double getPersentase(String Kondisi)
+    {
+        double persen = 0;
+        try {
+            persen = ((double) Pencatatan.getDetailOuput(Kondisi) / Pencatatan.getTotalProduksi()) * 100;
+
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
+        return  persen;
     }
 
 }
