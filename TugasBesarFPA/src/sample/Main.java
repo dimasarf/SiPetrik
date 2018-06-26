@@ -28,13 +28,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, TransformerException {
-        //Mesin mesin1 = new Mesin("fxPa3");
-        //Pencatatan.CatatMesinBaru(mesin1);
-       // Mesin mesin2 = new Mesin("fxpa2");
-        //Pencatatan.CatatMesinBaru(mesin2);
-        //Mesin mesin3 = new Mesin("fxpa3");
-        //Pencatatan.CatatMesinBaru(mesin3);
-        //System.out.println(5/2);
         launch(args);
 
     }
