@@ -22,13 +22,15 @@ import javax.xml.crypto.Data;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 
 public class ViewDataController implements Initializable
 {
     @FXML
-    private JFXListView<DataProduksi> tblData;
+    private TableView tblData;
     @FXML
     private Label lblTanggal;
     @FXML
@@ -49,39 +51,61 @@ public class ViewDataController implements Initializable
     private JFXButton btnStat;
     @FXML
     private JFXButton btnOutput;
+    @FXML
+    private JFXButton btnDataProduksi;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        tblData.setStyle("-fx-background-insets: 0 ;");
-        tblData.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            data = newValue;
-            lblMesin.setText(data.getMesin());
-            lblStatus.setText(data.getKondisi_Barang());
-            lblTanggal.setText(data.getTglProduksi());
-        });
         if(dataToDisplay.equals("Semua"))
             GetAllProduksi();
         else
-            getSpesificCOndition();
+            getSpesificCondition();
 
+    }
+
+    public void initTable()
+    {
+        TableColumn<DataHasilProduksi, String> kolomMesin = new TableColumn<>("Mesin");
+        kolomMesin.setMinWidth(200);
+        kolomMesin.setCellValueFactory(new PropertyValueFactory<>("namaMesin"));
+
+        TableColumn<DataHasilProduksi, Integer> kolomTarget = new TableColumn<>("Target Produksi");
+        kolomTarget.setMinWidth(200);
+        kolomTarget.setCellValueFactory(new PropertyValueFactory<>("targetProduksi"));
+
+        TableColumn<DataHasilProduksi, Integer> kolomShift = new TableColumn<>("Shift");
+        kolomShift.setMinWidth(200);
+        kolomShift.setCellValueFactory(new PropertyValueFactory<>("shift"));
+
+        TableColumn<DataHasilProduksi, Integer> kolomReject = new TableColumn<>("Hasil Reject");
+        kolomReject.setMinWidth(200);
+        kolomReject.setCellValueFactory(new PropertyValueFactory<>("hasilReject"));
+
+        TableColumn<DataHasilProduksi, Integer> kolomOk = new TableColumn<>("Hasil OK");
+        kolomOk.setMinWidth(200);
+        kolomOk.setCellValueFactory(new PropertyValueFactory<>("hasilOK"));
+
+        TableColumn<DataHasilProduksi, Date> kolomTgl = new TableColumn<>("Tanggal Produksi");
+        kolomTgl.setMinWidth(200);
+        kolomTgl.setCellValueFactory(new PropertyValueFactory<>("tanggalProduksi"));
+
+        tblData.getColumns().addAll(kolomMesin, kolomTarget, kolomShift, kolomReject, kolomOk, kolomTgl);
     }
 
     public void GetAllProduksi()
     {
+        initTable();
         try {
-            tblData.getItems().addAll(Pencatatan.getAllProduksi());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
+            tblData.getItems().addAll(Pencatatan.getHasilProduksi());
+        } catch (IOException | ParserConfigurationException | ParseException | SAXException e) {
             e.printStackTrace();
         }
     }
 
-    public void getSpesificCOndition()
+    public void getSpesificCondition()
     {
+        initTable();
         try {
             for (DataProduksi dp : Pencatatan.getAllProduksi())
             {
@@ -89,11 +113,7 @@ public class ViewDataController implements Initializable
                     tblData.getItems().add(dp);
             }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
+        } catch (IOException | SAXException | ParserConfigurationException e) {
             e.printStackTrace();
         }
     }
@@ -119,13 +139,17 @@ public class ViewDataController implements Initializable
     {
         boolean found = false;
         tblData.getItems().clear();
-        for (DataProduksi dp : Pencatatan.getAllProduksi() )
-        {
-            if(dp.getIdBarang().contains(txtCari.getText()))
+        try {
+            for (DataHasilProduksi dp : Pencatatan.getHasilProduksi() )
             {
-                tblData.getItems().add(dp);
-                found = true;
+                if(dp.getNamaMesin().contains(txtCari.getText()))
+                {
+                    tblData.getItems().add(dp);
+                    found = true;
+                }
             }
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
         if(!found)
         {
@@ -133,7 +157,7 @@ public class ViewDataController implements Initializable
             if(dataToDisplay.equals("Semua"))
                 GetAllProduksi();
             else
-                getSpesificCOndition();
+                getSpesificCondition();
         }
     }
 
@@ -150,6 +174,14 @@ public class ViewDataController implements Initializable
     {
         NavMenu.OutputMesin();
         Stage stageToClose = (Stage) btnOutput.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    public void btnDataProduksiOnAction(ActionEvent e)
+    {
+        NavMenu.DataProduksi();
+        Stage stageToClose = (Stage) btnDataProduksi.getScene().getWindow();
         stageToClose.close();
     }
 

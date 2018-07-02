@@ -18,6 +18,7 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -50,6 +51,8 @@ public class HomeViewController implements Initializable
     private JFXButton btnStat;
     @FXML
     private JFXButton btnOutput;
+    @FXML
+    private JFXButton btnDataProduksi;
 
 
     @FXML
@@ -85,15 +88,15 @@ public class HomeViewController implements Initializable
     {
         SetJam();
         SetTanggal();
+        totalProduksi.setText(String.valueOf(Pencatatan.getTotalHasilProduksi()));
         try {
-            totalProduksi.setText(String.valueOf(Pencatatan.getTotalProduksi()));
-            totalOuputOk.setText(String.valueOf(Pencatatan.getDetailOuput("OK")));
-            totalOuputReject.setText(String.valueOf(Pencatatan.getDetailOuput("Rejected")));
-        } catch (IOException e) {
+            totalOuputOk.setText(String.valueOf(Pencatatan.getTotalDetailHasilProduksi("OK")));
+        } catch (ParseException e) {
             e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
+        }
+        try {
+            totalOuputReject.setText(String.valueOf(Pencatatan.getTotalDetailHasilProduksi("Rejected")));
+        } catch (ParseException e) {
             e.printStackTrace();
         }
     }
@@ -140,41 +143,13 @@ public class HomeViewController implements Initializable
     @FXML
     public void btnOutputRejectedOnActionEvent(ActionEvent event)
     {
-        Parent root;
-        ViewDataController.dataToDisplay = "Rejected";
-        try
-        {
-            root = FXMLLoader.load(getClass().getResource("ViewData.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-            Stage stageToClose = (Stage) btnTotalOuputRejected.getScene().getWindow();
-            stageToClose.close();
-        }
-        catch (IOException e)
-        {
-            System.out.println(e.getMessage());
-        }
+
     }
 
     @FXML
     public void btnTotalOuputOkOnActionEvent(ActionEvent event)
     {
-        Parent root;
-        ViewDataController.dataToDisplay = "OK";
-        try
-        {
-            root = FXMLLoader.load(getClass().getResource("ViewData.fxml"));
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
-            Stage stageToClose = (Stage) btnTotalOuputOk.getScene().getWindow();
-            stageToClose.close();
-        }
-        catch (IOException e)
-        {
-            System.out.println(e.getMessage());
-        }
+
     }
 
     @FXML
@@ -195,5 +170,13 @@ public class HomeViewController implements Initializable
         {
             System.out.println(e.getMessage());
         }
+    }
+
+    @FXML
+    public void btnDataProduksiOnAction(ActionEvent e)
+    {
+        NavMenu.DataProduksi();
+        Stage stageToClose = (Stage) btnDataProduksi.getScene().getWindow();
+        stageToClose.close();
     }
 }

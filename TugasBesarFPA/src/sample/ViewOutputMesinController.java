@@ -65,6 +65,8 @@ public class ViewOutputMesinController implements Initializable
     private Label lblWaktuOK;
     @FXML
     private Label lblWaktuReject;
+    @FXML
+    private JFXButton btnDataProduksi;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -127,16 +129,18 @@ public class ViewOutputMesinController implements Initializable
 
             for (OutputMesin om2 : om)
             {
-                for (DataProduksi dp2 : Pencatatan.getAllProduksi())
-                {
-                    if (dp2.getMesin().equals(om2.getMesin()))
+                try {
+                    for (DataHasilProduksi dp2 : Pencatatan.getHasilProduksi())
                     {
-                        if(dp2.getKondisi_Barang().equals("OK"))
-                            om2.setJumlahBarangOK(1);
-                        else
-                            om2.setJumlahBarangReject(1);
+                        if (dp2.getNamaMesin().equals(om2.getMesin()))
+                        {
+                           om2.setJumlahBarangReject(dp2.getHasilReject());
+                           om2.setJumlahBarangOK(dp2.getHasilOK());
 
+                        }
                     }
+                } catch (ParseException e) {
+                    e.printStackTrace();
                 }
             }
             System.out.println(om);
@@ -149,11 +153,7 @@ public class ViewOutputMesinController implements Initializable
             lblRata2Rj.setText(String.valueOf(Statistik.HitungRata2Reject(om)));
             lblMedianRj.setText(String.valueOf(Statistik.medianOuputReject(om)));
             lblModusRj.setText(String.valueOf(Statistik.getModusReject(om).getMesin()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
+        } catch (IOException | ParserConfigurationException | SAXException e) {
             e.printStackTrace();
         }
     }
@@ -177,24 +177,15 @@ public class ViewOutputMesinController implements Initializable
 
             for (OutputMesin om2 : om)
             {
-                for (DataProduksi dp2 : Pencatatan.getAllProduksi())
+                for (DataHasilProduksi dp2 : Pencatatan.getHasilProduksi())
                 {
                     Date tgl = null;
-                    try {
-                        tgl = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(dp2.getTglProduksi());
-                    } catch (ParseException e) {
-                        System.out.println(e.getMessage());
-                    }
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                    String tgl2 = sdf.format(tgl);
-                    System.out.println(sdf.format(tgl));
-                    if (dp2.getMesin().equals(om2.getMesin()) && tgl2.equals(date))
+                    String tgl2 = sdf.format(dp2.getTanggalProduksi());
+                    if (dp2.getNamaMesin().equals(om2.getMesin()) && tgl2.equals(date))
                     {
-                        if(dp2.getKondisi_Barang().equals("OK"))
-                            om2.setJumlahBarangOK(1);
-                        else
-                            om2.setJumlahBarangReject(1);
-
+                        om2.setJumlahBarangReject(dp2.getHasilReject());
+                        om2.setJumlahBarangOK(dp2.getHasilOK());
                     }
                 }
             }
@@ -208,11 +199,7 @@ public class ViewOutputMesinController implements Initializable
             lblRata2Rj.setText(String.valueOf(Statistik.HitungRata2Reject(om)));
             lblMedianRj.setText(String.valueOf(Statistik.medianOuputReject(om)));
             lblModusRj.setText(String.valueOf(Statistik.getModusReject(om).getMesin()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
+        } catch (IOException | ParserConfigurationException | SAXException | ParseException e) {
             e.printStackTrace();
         }
     }
@@ -247,6 +234,14 @@ public class ViewOutputMesinController implements Initializable
     {
         NavMenu.OutputMesin();
         Stage stageToClose = (Stage) btnOutput.getScene().getWindow();
+        stageToClose.close();
+    }
+
+    @FXML
+    public void btnDataProduksiOnAction(ActionEvent e)
+    {
+        NavMenu.DataProduksi();
+        Stage stageToClose = (Stage) btnDataProduksi.getScene().getWindow();
         stageToClose.close();
     }
 

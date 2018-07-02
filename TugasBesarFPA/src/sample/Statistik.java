@@ -4,6 +4,7 @@ import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.Collections;
 import java.util.List;
 
@@ -101,17 +102,51 @@ public class Statistik
     public static double getPersentase(String Kondisi)
     {
         double persen = 0;
-        try {
+        try
+        {
             persen = ((double) Pencatatan.getDetailOuput(Kondisi) / Pencatatan.getTotalProduksi()) * 100;
 
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
+        } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
         return  persen;
     }
+
+    public static double getPeformaMesin(String mesin)
+    {
+        double persen = 0;
+        try {
+            if (Pencatatan.getTotalTarget(mesin)!= 0)
+                persen = ((double) Pencatatan.getTotalDetailHasilProduksi("OK")/ Pencatatan.getTotalTarget(mesin)) * 100;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return persen;
+    }
+
+    public static double getPeformaMesin(int bulan, int tahun, String mesin)
+    {
+        double persen = 0;
+        try {
+            if (Pencatatan.getTotalTarget(bulan, tahun, mesin)!= 0)
+                persen = ((double) Pencatatan.getTotalDetailHasilProduksi("OK")/ Pencatatan.getTotalTarget(mesin)) * 100;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return persen;
+    }
+
+    public static double getPeformaMesin(int tahun, String mesin)
+    {
+        double persen = 0;
+        try {
+            if (Pencatatan.getTotalTarget(tahun, mesin)!= 0)
+                persen = ((double) Pencatatan.getTotalDetailHasilProduksi("OK")/ Pencatatan.getTotalTarget(mesin)) * 100;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return persen;
+    }
+
 
 }

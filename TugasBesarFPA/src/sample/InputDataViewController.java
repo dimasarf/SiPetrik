@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.fxml.LoadException;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 import org.w3c.dom.Element;
@@ -14,6 +16,8 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
@@ -25,17 +29,18 @@ public class InputDataViewController implements Initializable
 {
     Task progress;
     @FXML
+    private JFXTextField txtTarget;
+
+    @FXML
     private JFXComboBox namaMesin;
     @FXML
     private JFXComboBox jam, menit, detik;
     @FXML
     private JFXDatePicker tglProduksi;
     @FXML
-    private JFXRadioButton ok;
+    private JFXTextField txtHasilOK;
     @FXML
-    private JFXRadioButton rejected;
-    @FXML
-    private JFXTextField txtIdBarang;
+    private JFXTextField txtHasilReject;
     @FXML
     private JFXProgressBar progressBar;
     @FXML
@@ -48,9 +53,10 @@ public class InputDataViewController implements Initializable
     private JFXButton btnStat;
     @FXML
     private JFXButton btnOutput;
-
+    @FXML
+    private JFXButton btnDataProduksi;
     BackGroundWorker worker;
-    private  ToggleGroup group;
+
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -58,9 +64,6 @@ public class InputDataViewController implements Initializable
         progressBar.setProgress(0.0);
         worker = new BackGroundWorker();
         new Thread(worker).start();
-        group = new ToggleGroup();
-        ok.setToggleGroup(group);
-        rejected.setToggleGroup(group);
         NodeList nama2Mesin = XMLReader.getNode("dataMesin.xml");
         for(int i = 0; i < nama2Mesin.getLength(); i++)
         {
@@ -76,53 +79,24 @@ public class InputDataViewController implements Initializable
         {
             jam.getItems().add(h);
         }
-        for (int m = 0; m<=59; m++)
-        {
-            String minutes;
-            if(m <10)
-                minutes = "0"+String.valueOf(m);
-            else
-                minutes = String.valueOf(m);
-            menit.getItems().add(minutes);
-        }
-        for (int s = 0; s<=59; s++)
-        {
-            String seconds;
-            if(s <10)
-                seconds = "0"+String.valueOf(s);
-            else
-                seconds = String.valueOf(s);
-            detik.getItems().add(seconds);
-        }
 
     }
 
     @FXML
     public void btnSubmitOnaction(ActionEvent e) throws IOException, SAXException {
         try {
-            String statusBarang = group.getSelectedToggle().toString();
-            System.out.println(statusBarang);
-            boolean status = statusBarang.equals("JFXRadioButton[id=ok, styleClass=radio-button jfx-radio-button]'OK'");
-            String namaMesin = this.namaMesin.getValue().toString();
-            int jam = Integer.parseInt(this.jam.getValue().toString());
-            int menit = Integer.parseInt(this.menit.getValue().toString());
-            int detik = Integer.parseInt(this.detik.getValue().toString());
+            Calendar cal = new GregorianCalendar();
             int tgl = tglProduksi.getValue().getDayOfMonth();
             int bulan = tglProduksi.getValue().getMonthValue()-1;
             int tahun = tglProduksi.getValue().getYear();
-            System.out.println(bulan);
-            String idBarang = txtIdBarang.getText();
-            Calendar cal = new GregorianCalendar();
-            cal.set(tahun, bulan, tgl, jam,menit, detik);
-            Mesin mesin = new Mesin(namaMesin);
-            mesin.produksiBarang(status, idBarang, cal.getTime());
+            cal.set(tahun, bulan, tgl);
+            DataHasilProduksi dhp = new DataHasilProduksi(namaMesin.getValue().toString(), Integer.parseInt(txtTarget.getText()), Integer.parseInt(jam.getValue().toString()), Integer.parseInt(txtHasilReject.getText()),Integer.parseInt(txtHasilOK.getText()), cal.getTime());
+            Pencatatan.CatatHasilProduksi(dhp);
             AlertBox.display("Data berhasil disimpan!");
-        } catch (IOException xe) {
-            AlertBox.display("Data gagal disimpan");
         } catch (NumberFormatException ex) {
             AlertBox.display("Data gagal disimpan");
-        } catch (SAXException xex) {
-            AlertBox.display("Data gagal disimpan");
+        } catch (ParserConfigurationException e1) {
+            e1.printStackTrace();
         }
     }
 
@@ -130,7 +104,7 @@ public class InputDataViewController implements Initializable
     public void namaMesinOnAction(ActionEvent e)
     {
         double progress = progressBar.progressProperty().doubleValue();
-        double n = progress + 0.1;
+        double n = progress + 0.2;
         worker.updateProgress(n, 0.9);
         progressBar.progressProperty().bind(worker.progressProperty());
         System.out.println(progress);
@@ -172,5 +146,12 @@ public class InputDataViewController implements Initializable
         stageToClose.close();
     }
 
+    @FXML
+    public void btnDataProduksiOnAction(ActionEvent e)
+    {
+        NavMenu.DataProduksi();
+        Stage stageToClose = (Stage) btnDataProduksi.getScene().getWindow();
+        stageToClose.close();
+    }
 
 }

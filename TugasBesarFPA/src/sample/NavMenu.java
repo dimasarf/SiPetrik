@@ -76,4 +76,20 @@ public class NavMenu
             System.out.println(e.getMessage());
         }
     }
+
+    public static void DataProduksi()
+    {
+        Parent root;
+        try
+        {
+            root = FXMLLoader.load(NavMenu.class.getResource("ViewDataInterval.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        catch (IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
 }

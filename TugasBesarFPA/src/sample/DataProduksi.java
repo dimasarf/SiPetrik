@@ -9,6 +9,19 @@ public class DataProduksi
     private String Id_Barang, Mesin, Kondisi_Barang, Tanggal_Produksi;
     private Date tglProduksi;
 
+    public DataProduksi()
+    {
+
+    }
+    public DataProduksi(String namaBarang, Date date, String mesin, boolean status)
+    {
+        this.Id_Barang = namaBarang;
+        this.tglProduksi = date;
+        this.Mesin = mesin;
+        this.Kondisi_Barang = status ? "OK" : "Rejected";
+        this.Tanggal_Produksi = String.valueOf(tglProduksi);
+    }
+
     public String getIdBarang() {
         return Id_Barang;
     }
@@ -45,7 +58,7 @@ public class DataProduksi
 
     @Override
     public String toString() {
-        return this.getIdBarang();
+        return this.getMesin()+"   "+ getTanggal_Produksi()+"   "+ getKondisi_Barang();
     }
 
     public void setTglProduksi()

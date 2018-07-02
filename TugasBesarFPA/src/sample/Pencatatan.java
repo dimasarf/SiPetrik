@@ -26,21 +26,31 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class Pencatatan
 {
     private Mesin mesin;
     private Barang barang;
     private Date date;
+    private String shift;
 
     public Pencatatan(Mesin mesin, Barang barang, Date date) {
         this.mesin = mesin;
         this.barang = barang;
         this.date = date;
         System.out.println(date);
+    }
+    public Pencatatan(Mesin mesin, Barang barang, Date date, String shif) {
+        this.mesin = mesin;
+        this.barang = barang;
+        this.date = date;
+        this.shift = shif;
     }
 
 
@@ -58,12 +68,9 @@ public class Pencatatan
     }
 
     public void catatProduksi() throws ParserConfigurationException, IOException, SAXException {
-        XStream stream = new XStream(new StaxDriver());
-        stream.alias("Mesin", Mesin.class);
-        stream.alias("Barang", Barang.class);
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-        org.w3c.dom.Document doc = docBuilder.parse("dataProduksi.xml");
+        org.w3c.dom.Document doc = docBuilder.parse("dataProduksiBaru.xml");
         org.w3c.dom.Element root = doc.getDocumentElement();
 
         List<Pencatatan> pencatatanList = new ArrayList<>();
@@ -99,7 +106,107 @@ public class Pencatatan
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("dataProduksi.xml"));
+            StreamResult result = new StreamResult(new File("dataProduksiBaru.xml"));
+
+            transformer.transform(source, result);
+
+        } catch (TransformerConfigurationException exx) {
+            System.out.println(exx.getMessage());
+        } catch (TransformerException exxx) {
+            System.out.println(exxx.getMessage());
+        }
+    }
+
+    public static void CatatHasilProduksiBaruBanget(DataHasilProduksi catatan) throws TransformerException, ParserConfigurationException {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.newDocument();
+        org.w3c.dom.Element rootElement = doc.createElement("Pencatatan");
+        doc.appendChild(rootElement);
+
+        org.w3c.dom.Element produksi = doc.createElement("Produksi");
+        rootElement.appendChild(produksi);
+
+        org.w3c.dom.Element mesin = doc.createElement("Mesin");
+        mesin.appendChild(doc.createTextNode(catatan.getNamaMesin()));
+        produksi.appendChild(mesin);
+
+        org.w3c.dom.Element target = doc.createElement("Target");
+        target.appendChild(doc.createTextNode(String.valueOf(catatan.getTargetProduksi())));
+        produksi.appendChild(target);
+
+        org.w3c.dom.Element shift = doc.createElement("Shift");
+        shift.appendChild(doc.createTextNode(String.valueOf(catatan.getShift())));
+        produksi.appendChild(shift);
+
+        org.w3c.dom.Element hasilOK = doc.createElement("Hasil_OK");
+        hasilOK.appendChild(doc.createTextNode(String.valueOf(catatan.getHasilOK())));
+        produksi.appendChild(hasilOK);
+
+        org.w3c.dom.Element hasilReject = doc.createElement("Hasil_Reject");
+        hasilReject.appendChild(doc.createTextNode(String.valueOf(catatan.getHasilReject())));
+        produksi.appendChild(hasilReject);
+
+        org.w3c.dom.Element tanggal = doc.createElement("Tanggal_Produksi");
+        tanggal.appendChild(doc.createTextNode(String.valueOf(catatan.getTanggalProduksi())));
+        produksi.appendChild(tanggal);
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File("dataHasilProduksi.xml"));
+
+        transformer.transform(source, result);
+    }
+
+    public static void CatatHasilProduksi(DataHasilProduksi hasil) throws IOException, SAXException, ParserConfigurationException {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.parse("dataHasilProduksi.xml");
+        org.w3c.dom.Element root = doc.getDocumentElement();
+
+        List<DataHasilProduksi> pencatatanList = new ArrayList<>();
+        pencatatanList.add(hasil);
+        try
+        {
+            for (DataHasilProduksi catatan: pencatatanList)
+            {
+                org.w3c.dom.Element rootElement = doc.createElement("Pencatatan");
+
+                org.w3c.dom.Element produksi = doc.createElement("Produksi");
+                rootElement.appendChild(produksi);
+
+                org.w3c.dom.Element mesin = doc.createElement("Mesin");
+                mesin.appendChild(doc.createTextNode(catatan.getNamaMesin()));
+                produksi.appendChild(mesin);
+
+                org.w3c.dom.Element target = doc.createElement("Target");
+                target.appendChild(doc.createTextNode(String.valueOf(catatan.getTargetProduksi())));
+                produksi.appendChild(target);
+
+                org.w3c.dom.Element shift = doc.createElement("Shift");
+                shift.appendChild(doc.createTextNode(String.valueOf(catatan.getShift())));
+                produksi.appendChild(shift);
+
+                org.w3c.dom.Element hasilOK = doc.createElement("Hasil_OK");
+                hasilOK.appendChild(doc.createTextNode(String.valueOf(catatan.getHasilOK())));
+                produksi.appendChild(hasilOK);
+
+                org.w3c.dom.Element hasilReject = doc.createElement("Hasil_Reject");
+                hasilReject.appendChild(doc.createTextNode(String.valueOf(catatan.getHasilReject())));
+                produksi.appendChild(hasilReject);
+
+                org.w3c.dom.Element tanggal = doc.createElement("Tanggal_Produksi");
+                tanggal.appendChild(doc.createTextNode(String.valueOf(catatan.getTanggalProduksi())));
+                produksi.appendChild(tanggal);
+
+                root.appendChild(produksi);
+            }
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File("dataHasilProduksi.xml"));
 
             transformer.transform(source, result);
 
@@ -194,10 +301,14 @@ public class Pencatatan
         kondisiBarang.appendChild(doc.createTextNode(this.barang.getCondition()));
         produksi.appendChild(kondisiBarang);
 
+        org.w3c.dom.Element shif = doc.createElement("Shift");
+        kondisiBarang.appendChild(doc.createTextNode(this.shift));
+        produksi.appendChild(shif);
+
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File("dataProduksi.xml"));
+        StreamResult result = new StreamResult(new File("dataProduksiBaru.xml"));
 
         transformer.transform(source, result);
     }
@@ -300,10 +411,189 @@ public class Pencatatan
         return banyakBarangOk;
     }
 
+    public static ObservableList<DataHasilProduksi> getHasilProduksi() throws ParserConfigurationException, IOException, SAXException, ParseException {
+        ObservableList<DataHasilProduksi> listProduksi =FXCollections.observableArrayList();
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = docBuilder.parse("dataHasilProduksi.xml");
+        NodeList produksi = doc.getElementsByTagName("Produksi");
+        for (int i =0; i <produksi.getLength(); i++)
+        {
+            DataHasilProduksi dhp = new DataHasilProduksi();
+            Node node = produksi.item(i);
+            org.w3c.dom.Element elemen = (org.w3c.dom.Element) node;
+            dhp.setNamaMesin(elemen.getElementsByTagName("Mesin").item(0).getTextContent());
+            dhp.setTargetProduksi(Integer.parseInt(elemen.getElementsByTagName("Target").item(0).getTextContent()));
+            dhp.setShift(Integer.parseInt(elemen.getElementsByTagName("Shift").item(0).getTextContent()));
+            dhp.setHasilOK(Integer.parseInt(elemen.getElementsByTagName("Hasil_OK").item(0).getTextContent()));
+            dhp.setHasilReject(Integer.parseInt(elemen.getElementsByTagName("Hasil_Reject").item(0).getTextContent()));
+            Date tglProduksi2 = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(elemen.getElementsByTagName("Tanggal_Produksi").item(0).getTextContent());
+            dhp.setTanggalProduksi(tglProduksi2);
+            listProduksi.add(dhp);
+        }
+        return listProduksi;
+    }
+
+    public static int getTotalHasilProduksi()
+    {
+        int total = 0;
+        try {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi()) {
+                total += dhp.getHasilOK() + dhp.getHasilReject();
+            }
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return total;
+    }
+
+    public static int getTotalDetailHasilProduksi(String Kondisi) throws ParseException {
+        int total =0;
+        try {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi()) {
+                if(Kondisi.equals("OK"))
+                    total += dhp.getHasilOK();
+                else
+                    total += dhp.getHasilReject();
+            }
+        } catch (ParserConfigurationException | IOException | SAXException e) {
+            e.printStackTrace();
+        }
+        return total;
+    }
+
+    public static int getTotalTarget(String mesin)
+    {
+        int totalTarget = 0;
+        try {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+            {
+                if(dhp.getNamaMesin().equals(mesin))
+                    totalTarget += dhp.getTargetProduksi();
+
+            }
+        } catch (ParserConfigurationException | IOException | ParseException | SAXException e) {
+            e.printStackTrace();
+        }
+        return totalTarget;
+    }
+
+    public static int getTotalDetailHasilProduksi(int bulan, int tahun, String Kondisi)
+    {
+        int total =0;
+        try
+        {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+            {
+                LocalDate locale = dhp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                if(locale.getMonthValue() == bulan && locale.getYear() == tahun)
+                {
+                    if (Kondisi.equals("OK"))
+                        total += dhp.getHasilOK();
+                    else
+                        total += dhp.getHasilReject();
+                }
+
+            }
+        } catch (ParserConfigurationException | IOException | SAXException | ParseException e) {
+            e.printStackTrace();
+        }
+        return total;
+    }
+
+    public static int getTotalDetailHasilProduksi(int tahun, String Kondisi)
+    {
+        int total =0;
+        try
+        {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+            {
+                LocalDate locale = dhp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                if(locale.getYear() == tahun)
+                {
+                    if (Kondisi.equals("OK"))
+                        total += dhp.getHasilOK();
+                    else
+                        total += dhp.getHasilReject();
+                }
+
+            }
+        } catch (ParserConfigurationException | IOException | SAXException | ParseException e) {
+            e.printStackTrace();
+        }
+        return total;
+    }
+
+    public static int getTotalDetailHasilProduksi(Date tgl , String Kondisi)
+    {
+        int total =0;
+        try
+        {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+            String tgl1 = sdf.format(tgl);
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+            {
+                String tgl2 = sdf.format(dhp.getTanggalProduksi());
+                if(tgl1.equals(tgl2))
+                {
+                    if (Kondisi.equals("OK"))
+                        total += dhp.getHasilOK();
+                    else
+                        total += dhp.getHasilReject();
+                }
+
+            }
+        } catch (ParserConfigurationException | IOException | SAXException | ParseException e) {
+            e.printStackTrace();
+        }
+
+        return total;
+    }
+
+    public static int getTotalTarget(int bulan, int tahun, String Mesin)
+    {
+        int totalTarget = 0;
+        try {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+            {
+                LocalDate locale = dhp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                if(locale.getMonthValue() == bulan && locale.getYear() == tahun && dhp.getNamaMesin().equals(Mesin))
+                {
+                    totalTarget += dhp.getTargetProduksi();
+                }
 
 
+            }
+        } catch (ParserConfigurationException | IOException | ParseException | SAXException e) {
+            e.printStackTrace();
+        }
+        return totalTarget;
+    }
+
+    public static int getTotalTarget(int tahun, String Mesin)
+    {
+        int totalTarget = 0;
+        try {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+            {
+                LocalDate locale = dhp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                if(locale.getYear() == tahun && dhp.getNamaMesin().equals(Mesin))
+                {
+                    totalTarget += dhp.getTargetProduksi();
+                }
 
 
-
-
+            }
+        } catch (ParserConfigurationException | IOException | ParseException | SAXException e) {
+            e.printStackTrace();
+        }
+        return totalTarget;
+    }
 }

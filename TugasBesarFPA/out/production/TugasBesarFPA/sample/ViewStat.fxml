@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXBadge?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDialog?>
 <?import com.jfoenix.controls.JFXProgressBar?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -9,6 +9,7 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,15 +18,13 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="821.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewStatController">
+<AnchorPane prefHeight="920.0" prefWidth="1269.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewStatController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <AnchorPane prefHeight="821.0" prefWidth="1274.0" style="-fx-background-color: #ecf0f1;">
+      <ScrollPane layoutY="-5.0" prefHeight="735.0" prefWidth="1269.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="946.0" prefWidth="1268.0" style="-fx-background-color: #ecf0f1;">
                <children>
-                  <JFXBadge layoutX="256.0" layoutY="56.0" />
-            
-                  <JFXDialog layoutX="348.0" layoutY="135.0" />
+                  <JFXDialog />
                   <Pane prefHeight="48.0" prefWidth="1274.0" style="-fx-background-color: #3498db;">
                      <children>
                         <Label layoutX="490.0" layoutY="12.0" text="Dashboard" textFill="WHITE">
@@ -33,7 +32,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <JFXButton fx:id="btnHome" layoutX="1161.0" layoutY="4.0" minWidth="47.0" onAction="#btnHomeOnAction" prefHeight="41.0" prefWidth="47.0">
+                        <JFXButton fx:id="btnHome" layoutX="1161.0" layoutY="7.0" minWidth="47.0" onAction="#btnHomeOnAction" prefHeight="41.0" prefWidth="47.0">
                            <graphic>
                               <ImageView fx:id="" fitHeight="36.0" fitWidth="47.0" layoutX="210.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -44,59 +43,64 @@
                         </JFXButton>
                      </children>
                   </Pane>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#333645" height="774.0" layoutX="-18.0" layoutY="47.0" stroke="#333645" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="240.0">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#333645" height="909.0" layoutX="-3.0" layoutY="41.0" stroke="#333645" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" width="252.0">
                      <effect>
                         <Blend />
                      </effect>
                   </Rectangle>
-                  <Label layoutX="369.0" layoutY="227.0" text="Mesin" textFill="#fcf2f2">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <JFXButton fx:id="inputData" layoutX="62.0" layoutY="64.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Data Baru" textFill="WHITE" />
-                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                  <JFXButton fx:id="inputData" layoutX="72.0" layoutY="73.0" onAction="#inputDataOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Data Baru" textFill="WHITE" />
+                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="24.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@add-button-inside-black-circle.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="btnStat" layoutX="62.0" layoutY="103.0" onAction="#btnStatOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Statistik" textFill="WHITE" />
-                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="14.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+                  <JFXButton fx:id="btnStat" layoutX="73.0" layoutY="113.0" onAction="#btnStatOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Statistik" textFill="WHITE" />
+                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="24.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@line-chart.png" />
                      </image>
                   </ImageView>
-                  <LineChart fx:id="okChart" layoutX="235.0" layoutY="58.0" prefHeight="381.0" prefWidth="1027.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
+                  <LineChart fx:id="okChart" layoutX="297.0" layoutY="171.0" prefHeight="381.0" prefWidth="1027.0">
+                     <xAxis>
+                        <CategoryAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
                   </LineChart>
-                  <PieChart fx:id="pieChart" layoutX="710.0" layoutY="412.0" prefHeight="360.0" prefWidth="564.0" stylesheets="@style.css" title="Diagram Produksi" />
-                  <JFXButton fx:id="btnOutput" layoutX="61.0" layoutY="141.0" onAction="#btnOutputOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Output Mesin" textFill="WHITE" />
-                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="13.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+                  <PieChart fx:id="pieChart" layoutX="813.0" layoutY="542.0" prefHeight="363.0" prefWidth="442.0" stylesheets="@style.css" title="Diagram Produksi" />
+                  <JFXButton fx:id="btnDataProduksi" layoutX="74.0" layoutY="151.0" onAction="#btnDataProduksiOnAction" prefHeight="32.0" prefWidth="137.0" style="-fx-background-color: #3498db;" text="Output Mesin" textFill="WHITE" />
+                  <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="24.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@settings-gears%20(1).png" />
                      </image>
                   </ImageView>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="171.0" layoutX="269.0" layoutY="516.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="458.0" />
-                  <JFXProgressBar fx:id="progressOK" layoutX="280.0" layoutY="577.0" opacity="0.99" prefHeight="25.0" prefWidth="430.0" progress="0.81" style="fx-background-color: #2ecc71;" />
-                  <JFXProgressBar fx:id="progressReject" layoutX="280.0" layoutY="640.0" prefHeight="25.0" prefWidth="430.0" progress="0.41" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9b59b6" height="48.0" layoutX="268.0" layoutY="470.0" stroke="#9b59b6" strokeLineJoin="ROUND" strokeMiterLimit="5.0" strokeType="OUTSIDE" strokeWidth="0.5" width="460.0" />
-                  <Label layoutX="282.0" layoutY="546.0" text="Ouput OK" />
-                  <Label layoutX="284.0" layoutY="615.0" text="Ouput Reject" />
-                  <Label layoutX="280.0" layoutY="475.0" text="Persentase" textFill="WHITE">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="249.0" layoutX="334.0" layoutY="595.0" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" width="466.0" />
+                  <JFXProgressBar fx:id="progressMesin1" layoutX="347.0" layoutY="649.0" opacity="0.99" prefHeight="25.0" prefWidth="430.0" progress="0.81" style="fx-background-color: #2ecc71;" />
+                  <JFXProgressBar fx:id="progressMesin2" layoutX="347.0" layoutY="717.0" prefHeight="25.0" prefWidth="430.0" progress="0.41" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#9b59b6" height="49.0" layoutX="332.0" layoutY="547.0" stroke="#9b59b6" strokeLineJoin="ROUND" strokeMiterLimit="5.0" strokeType="OUTSIDE" strokeWidth="0.5" width="470.0" />
+                  <Label layoutX="351.0" layoutY="618.0" text="FXPA2" />
+                  <Label layoutX="349.0" layoutY="686.0" text="FXPA3" />
+                  <Label layoutX="353.0" layoutY="549.0" prefWidth="229.0" text="Peforma Mesin" textFill="WHITE">
                      <font>
                         <Font name="Garuda" size="20.0" />
                      </font>
                   </Label>
-                  <Label fx:id="persenOK" layoutX="469.0" layoutY="580.0" text="Label" />
-                  <Label fx:id="persenReject" layoutX="471.0" layoutY="643.0" text="Label" />
+                  <Label fx:id="persenOK" layoutX="547.0" layoutY="653.0" text="Label" />
+                  <Label fx:id="persenMesin2" layoutX="545.0" layoutY="721.0" text="Label" />
+                  <JFXProgressBar fx:id="progressMesin3" layoutX="347.0" layoutY="786.0" prefHeight="25.0" prefWidth="430.0" progress="0.41" />
+                  <Label layoutX="351.0" layoutY="755.0" text="FXPA4" />
+                  <Label fx:id="persenMesin3" layoutX="549.0" layoutY="791.0" text="Label" />
+                  <JFXButton fx:id="btnFilter" layoutX="634.0" layoutY="62.0" onAction="#btnFilterOnAction" prefHeight="32.0" prefWidth="109.0" style="-fx-background-color: #3498db;" text="Filter" textFill="#fffbfb" />
+                  <Label fx:id="lblBulan" layoutX="445.0" layoutY="128.0" text="Bulan Ke" visible="false" />
+                  <JFXComboBox fx:id="cbBulan" layoutX="508.0" layoutY="118.0" prefHeight="28.0" prefWidth="70.0" visible="false" />
+                  <Label fx:id="lblTahun" layoutX="601.0" layoutY="129.0" text="Tahun" visible="false" />
+                  <JFXComboBox fx:id="cbTahun" layoutX="657.0" layoutY="119.0" prefHeight="28.0" prefWidth="70.0" visible="false" />
+                  <JFXButton fx:id="btnOK" layoutX="760.0" layoutY="120.0" onAction="#btnOKOnAction" text="OK" visible="false" />
+                  <JFXButton fx:id="btnSemua" layoutX="495.0" layoutY="62.0" onAction="#btnSemuaOnAction" prefHeight="32.0" prefWidth="109.0" style="-fx-background-color: #2ecc71;" text="Semua" textFill="#fffbfb" />
                </children>
             </AnchorPane>
-         </children>
-      </AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
