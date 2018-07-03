@@ -644,7 +644,7 @@ public class Pencatatan
     }
 
     public static double getTotalDetailHslProduksi(int tahun, String mesin, String Kondisi)
-{
+    {
     int total =0;
     try
     {
@@ -663,6 +663,57 @@ public class Pencatatan
     } catch (ParserConfigurationException | IOException | SAXException | ParseException e) {
         e.printStackTrace();
     }
-    return total;
-}
+        return total;
+    }
+
+    public static void updateData(DataHasilProduksi dhp, int index) throws ParserConfigurationException {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        org.w3c.dom.Document doc = null;
+        try {
+            doc = docBuilder.parse("dataHasilProduksi.xml");
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        NodeList listProduksi = doc.getElementsByTagName("Produksi");
+        org.w3c.dom.Element el = null;
+        el = (org.w3c.dom.Element) listProduksi.item(index);
+
+        Node _nodeMesin = el.getElementsByTagName("Mesin").item(0).getFirstChild();
+        _nodeMesin.setNodeValue(dhp.getNamaMesin());
+
+        Node _nodeTarget = el.getElementsByTagName("Target").item(0).getFirstChild();
+        _nodeTarget.setNodeValue(String.valueOf(dhp.getTargetProduksi()));
+
+        Node _nodeShift = el.getElementsByTagName("Shift").item(0).getFirstChild();
+        _nodeShift.setNodeValue(String.valueOf(dhp.getShift()));
+
+        Node _nodeHasilOK = el.getElementsByTagName("Hasil_OK").item(0).getFirstChild();
+        _nodeHasilOK.setNodeValue(String.valueOf(dhp.getHasilOK()));
+
+        Node _nodeHasilReject = el.getElementsByTagName("Hasil_Reject").item(0).getFirstChild();
+        _nodeHasilReject.setNodeValue(String.valueOf(dhp.getHasilReject()));
+
+        Node _nodeTanggal = el.getElementsByTagName("Tanggal_Produksi").item(0).getFirstChild();
+        _nodeTanggal.setNodeValue(String.valueOf(dhp.getTanggalProduksi()));
+        // get the salary element, and update the value
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = null;
+        try {
+            transformer = transformerFactory.newTransformer();
+        } catch (TransformerConfigurationException e) {
+            e.printStackTrace();
+        }
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File("dataHasilProduksi.xml"));
+
+        try {
+            transformer.transform(source, result);
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+    }
 }
