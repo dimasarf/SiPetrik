@@ -716,4 +716,43 @@ public class Pencatatan
             e.printStackTrace();
         }
     }
+
+    public static void deleteData(int index)
+    {
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = null;
+        try {
+            docBuilder = docFactory.newDocumentBuilder();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        org.w3c.dom.Document doc = null;
+        try {
+            doc = docBuilder.parse("dataHasilProduksi.xml");
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        org.w3c.dom.Element el = (org.w3c.dom.Element) doc.getElementsByTagName("Produksi").item(index);
+        Node parent = el.getParentNode();
+        parent.removeChild(el);
+        parent.normalize();
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = null;
+        try {
+            transformer = transformerFactory.newTransformer();
+        } catch (TransformerConfigurationException e) {
+            e.printStackTrace();
+        }
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File("dataHasilProduksi.xml"));
+
+        try {
+            transformer.transform(source, result);
+        } catch (TransformerException e) {
+            e.printStackTrace();
+        }
+    }
 }

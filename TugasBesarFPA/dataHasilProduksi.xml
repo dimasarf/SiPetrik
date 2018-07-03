@@ -1,1 +1,2470 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><Pencatatan><Produksi><Mesin>fxPa2</Mesin><Target>578</Target><Shift>3</Shift><Hasil_OK>140</Hasil_OK><Hasil_Reject>1471</Hasil_Reject><Tanggal_Produksi>Sun Apr 01 00:38:48 WIB 2018</Tanggal_Produksi></Produksi><Produksi><Mesin>fxPa2</Mesin><Target>0</Target><Shift>2</Shift><Hasil_OK>0</Hasil_OK><Hasil_Reject>0</Hasil_Reject><Tanggal_Produksi>Sun Apr 01 23:39:28 WIB 2018</Tanggal_Produksi></Produksi><Produksi><Mesin>fxPa2</Mesin><Target>576</Target><Shift>3</Shift><Hasil_OK>58</Hasil_OK><Hasil_Reject>42</Hasil_Reject><Tanggal_Produksi>Sun Apr 01 23:39:28 WIB 2018</Tanggal_Produksi></Produksi><Produksi><Mesin>fxPa2</Mesin><Target>576</Target><Shift>1</Shift><Hasil_OK>246</Hasil_OK><Hasil_Reject>66</Hasil_Reject><Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi></Produksi><Produksi><Mesin>fxPa3</Mesin><Target>576</Target><Shift>1</Shift><Hasil_OK>400</Hasil_OK><Hasil_Reject>41</Hasil_Reject><Tanggal_Produksi>Mon Apr 02 16:32:15 WIB 2018</Tanggal_Produksi></Produksi><Produksi><Mesin>fxPa2</Mesin><Target>576</Target><Shift>1</Shift><Hasil_OK>342</Hasil_OK><Hasil_Reject>33</Hasil_Reject><Tanggal_Produksi>Tue Apr 03 18:09:55 WIB 2018</Tanggal_Produksi></Produksi></Pencatatan>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Pencatatan>
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>140</Hasil_OK>
+<Hasil_Reject>147</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 23:39:28 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 23:39:28 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>58</Hasil_OK>
+<Hasil_Reject>42</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 23:39:28 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>246</Hasil_OK>
+<Hasil_Reject>66</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>140</Hasil_OK>
+<Hasil_Reject>147</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>58</Hasil_OK>
+<Hasil_Reject>42</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>246</Hasil_OK>
+<Hasil_Reject>66</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>259</Hasil_OK>
+<Hasil_Reject>97</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>386</Hasil_OK>
+<Hasil_Reject>14</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>342</Hasil_OK>
+<Hasil_Reject>33</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>373</Hasil_OK>
+<Hasil_Reject>27</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>390</Hasil_OK>
+<Hasil_Reject>10</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>99</Hasil_OK>
+<Hasil_Reject>26</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>260</Hasil_OK>
+<Hasil_Reject>76</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>360</Hasil_OK>
+<Hasil_Reject>28</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>275</Hasil_OK>
+<Hasil_Reject>25</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>306</Hasil_OK>
+<Hasil_Reject>49</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>365</Hasil_OK>
+<Hasil_Reject>35</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>352</Hasil_OK>
+<Hasil_Reject>35</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>360</Hasil_OK>
+<Hasil_Reject>35</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>175</Hasil_OK>
+<Hasil_Reject>12</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>36</Hasil_OK>
+<Hasil_Reject>4</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>203</Hasil_OK>
+<Hasil_Reject>31</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>320</Hasil_OK>
+<Hasil_Reject>31</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>388</Hasil_OK>
+<Hasil_Reject>28</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>382</Hasil_OK>
+<Hasil_Reject>34</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>408</Hasil_OK>
+<Hasil_Reject>8</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>377</Hasil_OK>
+<Hasil_Reject>26</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>347</Hasil_OK>
+<Hasil_Reject>36</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>378</Hasil_OK>
+<Hasil_Reject>25</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>246</Hasil_OK>
+<Hasil_Reject>14</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>144</Hasil_OK>
+<Hasil_Reject>18</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>342</Hasil_OK>
+<Hasil_Reject>74</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>136</Hasil_OK>
+<Hasil_Reject>20</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>229</Hasil_OK>
+<Hasil_Reject>16</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>229</Hasil_OK>
+<Hasil_Reject>16</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>346</Hasil_OK>
+<Hasil_Reject>59</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>378</Hasil_OK>
+<Hasil_Reject>25</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>342</Hasil_OK>
+<Hasil_Reject>22</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>104</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>32</Hasil_OK>
+<Hasil_Reject>32</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>318</Hasil_OK>
+<Hasil_Reject>45</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>270</Hasil_OK>
+<Hasil_Reject>45</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>90</Hasil_OK>
+<Hasil_Reject>71</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>252</Hasil_OK>
+<Hasil_Reject>60</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>212</Hasil_OK>
+<Hasil_Reject>48</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>18</Hasil_OK>
+<Hasil_Reject>8</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>270</Hasil_OK>
+<Hasil_Reject>31</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>324</Hasil_OK>
+<Hasil_Reject>79</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>262</Hasil_OK>
+<Hasil_Reject>76</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>207</Hasil_OK>
+<Hasil_Reject>1</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>402</Hasil_OK>
+<Hasil_Reject>14</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>294</Hasil_OK>
+<Hasil_Reject>57</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>234</Hasil_OK>
+<Hasil_Reject>75</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>342</Hasil_OK>
+<Hasil_Reject>35</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>375</Hasil_OK>
+<Hasil_Reject>41</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>234</Hasil_OK>
+<Hasil_Reject>182</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>342</Hasil_OK>
+<Hasil_Reject>48</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>78</Hasil_OK>
+<Hasil_Reject>26</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>126</Hasil_OK>
+<Hasil_Reject>56</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>300</Hasil_OK>
+<Hasil_Reject>25</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>336</Hasil_OK>
+<Hasil_Reject>38</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>342</Hasil_OK>
+<Hasil_Reject>74</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>351</Hasil_OK>
+<Hasil_Reject>65</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>324</Hasil_OK>
+<Hasil_Reject>92</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>115</Hasil_OK>
+<Hasil_Reject>171</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>184</Hasil_OK>
+<Hasil_Reject>24</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>379</Hasil_OK>
+<Hasil_Reject>37</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>350</Hasil_OK>
+<Hasil_Reject>40</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>374</Hasil_OK>
+<Hasil_Reject>26</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>341</Hasil_OK>
+<Hasil_Reject>28</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>370</Hasil_OK>
+<Hasil_Reject>30</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>376</Hasil_OK>
+<Hasil_Reject>24</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>374</Hasil_OK>
+<Hasil_Reject>72</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>379</Hasil_OK>
+<Hasil_Reject>81</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>180</Hasil_OK>
+<Hasil_Reject>24</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>391</Hasil_OK>
+<Hasil_Reject>17</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>400</Hasil_OK>
+<Hasil_Reject>8</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>376</Hasil_OK>
+<Hasil_Reject>7</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>330</Hasil_OK>
+<Hasil_Reject>27</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>180</Hasil_OK>
+<Hasil_Reject>24</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa2</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>398</Hasil_OK>
+<Hasil_Reject>10</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>72</Hasil_OK>
+<Hasil_Reject>81</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>162</Hasil_OK>
+<Hasil_Reject>144</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>124</Hasil_OK>
+<Hasil_Reject>176</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>72</Hasil_OK>
+<Hasil_Reject>81</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>90</Hasil_OK>
+<Hasil_Reject>20</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>337</Hasil_OK>
+<Hasil_Reject>48</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>306</Hasil_OK>
+<Hasil_Reject>21</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>234</Hasil_OK>
+<Hasil_Reject>61</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>228</Hasil_OK>
+<Hasil_Reject>46</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>61</Hasil_OK>
+<Hasil_Reject>21</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>288</Hasil_OK>
+<Hasil_Reject>28</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>357</Hasil_OK>
+<Hasil_Reject>85</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>271</Hasil_OK>
+<Hasil_Reject>71</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>388</Hasil_OK>
+<Hasil_Reject>68</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>330</Hasil_OK>
+<Hasil_Reject>76</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>360</Hasil_OK>
+<Hasil_Reject>30</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>360</Hasil_OK>
+<Hasil_Reject>43</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>196</Hasil_OK>
+<Hasil_Reject>40</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>260</Hasil_OK>
+<Hasil_Reject>37</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>222</Hasil_OK>
+<Hasil_Reject>23</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>257</Hasil_OK>
+<Hasil_Reject>39</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>352</Hasil_OK>
+<Hasil_Reject>38</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>409</Hasil_OK>
+<Hasil_Reject>7</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>396</Hasil_OK>
+<Hasil_Reject>24</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>369</Hasil_OK>
+<Hasil_Reject>35</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>396</Hasil_OK>
+<Hasil_Reject>12</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>300</Hasil_OK>
+<Hasil_Reject>32</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>324</Hasil_OK>
+<Hasil_Reject>40</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>396</Hasil_OK>
+<Hasil_Reject>20</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>398</Hasil_OK>
+<Hasil_Reject>18</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>363</Hasil_OK>
+<Hasil_Reject>41</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>172</Hasil_OK>
+<Hasil_Reject>23</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>276</Hasil_OK>
+<Hasil_Reject>41</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>364</Hasil_OK>
+<Hasil_Reject>40</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>234</Hasil_OK>
+<Hasil_Reject>26</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>300</Hasil_OK>
+<Hasil_Reject>74</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>375</Hasil_OK>
+<Hasil_Reject>41</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>290</Hasil_OK>
+<Hasil_Reject>48</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>230</Hasil_OK>
+<Hasil_Reject>68</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>337</Hasil_OK>
+<Hasil_Reject>49</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>324</Hasil_OK>
+<Hasil_Reject>66</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>320</Hasil_OK>
+<Hasil_Reject>70</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>321</Hasil_OK>
+<Hasil_Reject>55</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>288</Hasil_OK>
+<Hasil_Reject>90</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>288</Hasil_OK>
+<Hasil_Reject>75</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>379</Hasil_OK>
+<Hasil_Reject>37</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>306</Hasil_OK>
+<Hasil_Reject>32</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>380</Hasil_OK>
+<Hasil_Reject>36</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>338</Hasil_OK>
+<Hasil_Reject>49</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>388</Hasil_OK>
+<Hasil_Reject>28</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>234</Hasil_OK>
+<Hasil_Reject>33</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>140</Hasil_OK>
+<Hasil_Reject>16</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>232</Hasil_OK>
+<Hasil_Reject>54</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>298</Hasil_OK>
+<Hasil_Reject>44</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>324</Hasil_OK>
+<Hasil_Reject>48</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>124</Hasil_OK>
+<Hasil_Reject>84</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>360</Hasil_OK>
+<Hasil_Reject>56</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>307</Hasil_OK>
+<Hasil_Reject>57</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>252</Hasil_OK>
+<Hasil_Reject>112</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>156</Hasil_OK>
+<Hasil_Reject>26</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>144</Hasil_OK>
+<Hasil_Reject>38</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>162</Hasil_OK>
+<Hasil_Reject>138</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>306</Hasil_OK>
+<Hasil_Reject>51</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>288</Hasil_OK>
+<Hasil_Reject>62</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>234</Hasil_OK>
+<Hasil_Reject>28</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>216</Hasil_OK>
+<Hasil_Reject>31</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>360</Hasil_OK>
+<Hasil_Reject>52</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>375</Hasil_OK>
+<Hasil_Reject>51</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>360</Hasil_OK>
+<Hasil_Reject>54</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>321</Hasil_OK>
+<Hasil_Reject>57</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>179</Hasil_OK>
+<Hasil_Reject>50</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>90</Hasil_OK>
+<Hasil_Reject>211</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>310</Hasil_OK>
+<Hasil_Reject>47</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>365</Hasil_OK>
+<Hasil_Reject>47</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>389</Hasil_OK>
+<Hasil_Reject>20</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>344</Hasil_OK>
+<Hasil_Reject>58</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>350</Hasil_OK>
+<Hasil_Reject>44</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>2</Shift>
+<Hasil_OK>318</Hasil_OK>
+<Hasil_Reject>67</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa3</Mesin>
+<Target>576</Target>
+<Shift>3</Shift>
+<Hasil_OK>360</Hasil_OK>
+<Hasil_Reject>52</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>465</Hasil_OK>
+<Hasil_Reject>55</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>443</Hasil_OK>
+<Hasil_Reject>61</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>440</Hasil_OK>
+<Hasil_Reject>60</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 01 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>206</Hasil_OK>
+<Hasil_Reject>47</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 02 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>104</Hasil_OK>
+<Hasil_Reject>70</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>387</Hasil_OK>
+<Hasil_Reject>64</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>387</Hasil_OK>
+<Hasil_Reject>63</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 03 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>397</Hasil_OK>
+<Hasil_Reject>47</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>233</Hasil_OK>
+<Hasil_Reject>31</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>340</Hasil_OK>
+<Hasil_Reject>73</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 04 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>78</Hasil_OK>
+<Hasil_Reject>30</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 05 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>576</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>140</Hasil_OK>
+<Hasil_Reject>22</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>451</Hasil_OK>
+<Hasil_Reject>39</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 06 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>425</Hasil_OK>
+<Hasil_Reject>45</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>400</Hasil_OK>
+<Hasil_Reject>60</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>472</Hasil_OK>
+<Hasil_Reject>38</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 07 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>244</Hasil_OK>
+<Hasil_Reject>16</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>380</Hasil_OK>
+<Hasil_Reject>76</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>408</Hasil_OK>
+<Hasil_Reject>80</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 08 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>205</Hasil_OK>
+<Hasil_Reject>11</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>420</Hasil_OK>
+<Hasil_Reject>34</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>318</Hasil_OK>
+<Hasil_Reject>62</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 09 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>130</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>392</Hasil_OK>
+<Hasil_Reject>45</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>337</Hasil_OK>
+<Hasil_Reject>67</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 10 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>440</Hasil_OK>
+<Hasil_Reject>14</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>350</Hasil_OK>
+<Hasil_Reject>39</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>432</Hasil_OK>
+<Hasil_Reject>53</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 11 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>1</Shift>
+<Hasil_OK>343</Hasil_OK>
+<Hasil_Reject>57</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>2</Shift>
+<Hasil_OK>320</Hasil_OK>
+<Hasil_Reject>4</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>640</Target>
+<Shift>3</Shift>
+<Hasil_OK>332</Hasil_OK>
+<Hasil_Reject>53</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 12 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 13 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 14 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 15 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 16 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 17 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 18 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 19 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 20 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 21 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 22 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 23 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Tue Apr 24 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Wed Apr 25 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Thu Apr 26 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Fri Apr 27 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sat Apr 28 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Sun Apr 29 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>1</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>2</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+<Produksi>
+<Mesin>fxPa4</Mesin>
+<Target>0</Target>
+<Shift>3</Shift>
+<Hasil_OK>0</Hasil_OK>
+<Hasil_Reject>0</Hasil_Reject>
+<Tanggal_Produksi>Mon Apr 30 21:33:20 WIB 2018</Tanggal_Produksi>
+</Produksi>
+
+
+</Pencatatan>

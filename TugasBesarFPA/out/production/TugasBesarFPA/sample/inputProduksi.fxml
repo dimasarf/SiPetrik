@@ -100,9 +100,8 @@
                         <JFXComboBox fx:id="cbShift" layoutX="273.0" layoutY="322.0" prefHeight="28.0" prefWidth="184.0" promptText="Pilih Shift" />
                         <JFXTextField fx:id="txtOK" layoutX="272.0" layoutY="369.0" prefHeight="26.0" prefWidth="184.0" promptText="Total Ouput OK" />
                         <JFXTextField fx:id="txtReject" layoutX="274.0" layoutY="416.0" prefHeight="26.0" prefWidth="184.0" promptText="Total Output Reject" />
-                        <Button fx:id="btnSubmit1" layoutX="244.0" layoutY="519.0" mnemonicParsing="false" onAction="#btnSubmitOnaction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: #2ecc71;" text="Tambah" textFill="WHITE" />
-                        <Button fx:id="btnEdit" layoutX="326.0" layoutY="518.0" mnemonicParsing="false" onAction="#btnEditOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: #f39c12;" text="Edit" textFill="WHITE" />
-                        <Button fx:id="btnSubmit111" layoutX="411.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnSubmitOnaction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: #e74c3c;" text="Hapus" textFill="WHITE" />
+                        <Button fx:id="btnEdit" layoutX="283.0" layoutY="518.0" mnemonicParsing="false" onAction="#btnEditOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: #f39c12;" text="Edit" textFill="WHITE" />
+                        <Button fx:id="btnSubmit111" layoutX="368.0" layoutY="520.0" mnemonicParsing="false" onAction="#btnHapusOnAction" prefHeight="32.0" prefWidth="69.0" style="-fx-background-color: #e74c3c;" text="Hapus" textFill="WHITE" />
                      </children>
                   </AnchorPane>
                </children>

@@ -32,7 +32,7 @@ public class NavMenu
         ViewDataController.dataToDisplay = "Rejected";
         try
         {
-            root = FXMLLoader.load(NavMenu.class.getResource("InputDataView.fxml"));
+            root = FXMLLoader.load(NavMenu.class.getResource("inputProduksi.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();

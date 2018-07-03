@@ -181,7 +181,7 @@ public class inputProduksiController implements Initializable
         } catch (IOException | ParserConfigurationException | ParseException | SAXException e) {
             e.printStackTrace();
         }
-        tblData.getItems().clear();
+       // tblData.getItems().clear();
     }
 
     @Override
@@ -240,7 +240,9 @@ public class inputProduksiController implements Initializable
     @FXML
     public void btnHapusOnAction(ActionEvent e)
     {
-        DataHasilProduksi dhp = (DataHasilProduksi) tblData.getSelectionModel().getSelectedItem();
-        tblData.getItems().remove(dhp);
+        int index = tblData.getSelectionModel().getSelectedIndex();
+        Pencatatan.deleteData(index);
+        GetAllProduksi();
+
     }
 }
