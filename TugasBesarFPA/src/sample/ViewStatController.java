@@ -102,8 +102,8 @@ public class ViewStatController implements Initializable
             Collections.sort(list, bc);
             for (DataHasilProduksi dp : list)
             {
-                series.getData().add(new XYChart.Data(dp.getTanggalProduksi().toString(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "OK")));
-                series2.getData().add(new XYChart.Data(dp.getTanggalProduksi().toString(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "Rejected")));
+                series.getData().add(new XYChart.Data(dp.getTglProduksi(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "OK")));
+                series2.getData().add(new XYChart.Data(dp.getTglProduksi(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "Rejected")));
             }
             okChart.getData().addAll(series, series2);
         } catch (IOException | ParserConfigurationException | SAXException | ParseException e) {
@@ -183,8 +183,8 @@ public class ViewStatController implements Initializable
                 LocalDate locale = dp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 if(locale.getYear() == tahun && locale.getMonthValue() == bulan)
                 {
-                    series.getData().add(new XYChart.Data(dp.getTanggalProduksi().toString(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "OK")));
-                    series2.getData().add(new XYChart.Data(dp.getTanggalProduksi().toString(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "Rejected")));
+                    series.getData().add(new XYChart.Data(dp.getTglProduksi(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "OK")));
+                    series2.getData().add(new XYChart.Data(dp.getTglProduksi(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "Rejected")));
                 }
             }
             okChart.getData().addAll(series, series2);
@@ -208,8 +208,8 @@ public class ViewStatController implements Initializable
                 LocalDate locale = dp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 if(locale.getYear() == tahun)
                 {
-                    series.getData().add(new XYChart.Data(dp.getTanggalProduksi().toString(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "OK")));
-                    series2.getData().add(new XYChart.Data(dp.getTanggalProduksi().toString(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "Rejected")));
+                    series.getData().add(new XYChart.Data(dp.getTglProduksi(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "OK")));
+                    series2.getData().add(new XYChart.Data(dp.getTglProduksi(), Pencatatan.getTotalDetailHasilProduksi(dp.getTanggalProduksi(), "Rejected")));
                 }
             }
             okChart.getData().addAll(series, series2);
@@ -265,6 +265,7 @@ public class ViewStatController implements Initializable
         pieChart.getData().clear();
         showPieChartData();
         showOkLinechart();
+        getPeformaMesin();
         lblBulan.setVisible(false);
         cbBulan.setVisible(false);
 

@@ -596,4 +596,73 @@ public class Pencatatan
         }
         return totalTarget;
     }
+
+    public static double getTotalDetailHasilProduksi(String mesin, String Kondisi)
+    {
+        int total =0;
+        try
+        {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+            {
+                LocalDate locale = dhp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                if(dhp.getNamaMesin().equals(mesin))
+                {
+                    if (Kondisi.equals("OK"))
+                        total += dhp.getHasilOK();
+                    else
+                        total += dhp.getHasilReject();
+                }
+
+            }
+        } catch (ParserConfigurationException | IOException | SAXException | ParseException e) {
+            e.printStackTrace();
+        }
+        return total;
+    }
+
+    public static double getTotalDetailHasilProduksi(int bulan, int tahun, String mesin, String Kondisi)
+    {
+        int total =0;
+        try
+        {
+            for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+            {
+                LocalDate locale = dhp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                if(dhp.getNamaMesin().equals(mesin)&& locale.getMonthValue() == bulan && locale.getYear() == tahun)
+                {
+                    if (Kondisi.equals("OK"))
+                        total += dhp.getHasilOK();
+                    else
+                        total += dhp.getHasilReject();
+                }
+
+            }
+        } catch (ParserConfigurationException | IOException | SAXException | ParseException e) {
+            e.printStackTrace();
+        }
+        return total;
+    }
+
+    public static double getTotalDetailHslProduksi(int tahun, String mesin, String Kondisi)
+{
+    int total =0;
+    try
+    {
+        for (DataHasilProduksi dhp : Pencatatan.getHasilProduksi())
+        {
+            LocalDate locale = dhp.getTanggalProduksi().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+            if(dhp.getNamaMesin().equals(mesin)&& locale.getYear() == tahun)
+            {
+                if (Kondisi.equals("OK"))
+                    total += dhp.getHasilOK();
+                else
+                    total += dhp.getHasilReject();
+            }
+
+        }
+    } catch (ParserConfigurationException | IOException | SAXException | ParseException e) {
+        e.printStackTrace();
+    }
+    return total;
+}
 }

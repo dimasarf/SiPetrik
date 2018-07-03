@@ -1,5 +1,8 @@
 package sample;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class DataHasilProduksi
@@ -23,7 +26,12 @@ public class DataHasilProduksi
     }
 
     public Date getTanggalProduksi() {
-        return tanggalProduksi;
+      return tanggalProduksi;
+    }
+
+    public String getTglProduksi() {
+        String tanggal = new SimpleDateFormat("dd-MMMM-yyyy").format(tanggalProduksi);
+        return tanggal;
     }
 
     public int getHasilOK() {

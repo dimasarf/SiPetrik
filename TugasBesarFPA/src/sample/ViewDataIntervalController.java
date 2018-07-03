@@ -44,6 +44,10 @@ public class ViewDataIntervalController implements Initializable
     private JFXButton btnOuputOK;
     @FXML
     private JFXButton btnOutputReject;
+    private double xiXfi = 0;
+    private int totalFrekuensi = 0;
+    private int _interval;
+    private List<DataInterval> listInterval;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -70,6 +74,7 @@ public class ViewDataIntervalController implements Initializable
 
     public void PopulateItemToTable(String Kondisi)
     {
+        tblData.getItems().clear();
         List<Integer> dummy = new ArrayList<>();
         try {
             for (DataHasilProduksi dhp: Pencatatan.getHasilProduksi())
@@ -88,6 +93,7 @@ public class ViewDataIntervalController implements Initializable
             System.out.println(banyakKelas);
             double x = rentang / banyakKelas;
             int interval = x % 1 == 0? (int) x : (int) Math.floor(x) + 1;
+            this._interval = interval;
             System.out.println(interval);
             ObservableList<DataInterval> listDi = FXCollections.observableArrayList();
 
@@ -120,7 +126,14 @@ public class ViewDataIntervalController implements Initializable
             }
 
             tblData.setItems(listDi);
-
+            listInterval = listDi;
+            lblRata2OK.setText(String.valueOf(hitungMean()));
+            lblMedianOK.setText(String.valueOf(hitungMedian()));
+            lblModusOk.setText(String.valueOf(hitungModus()));
+            System.out.println(hitungModus());
+            this.totalFrekuensi = 0;
+            this.xiXfi = 0;
+            this._interval = 0;
         } catch (ParserConfigurationException | IOException | ParseException | SAXException e) {
             e.printStackTrace();
         }
@@ -169,4 +182,74 @@ public class ViewDataIntervalController implements Initializable
     {
         PopulateItemToTable("Reject");
     }
+
+    private double hitungMean()
+    {
+        double rata2;
+        for (DataInterval dhp:listInterval)
+        {
+            this.xiXfi += ((dhp.getBatasAtas()+dhp.getBatasBawah())/2) * dhp.getFrekuensi();
+            totalFrekuensi += dhp.getFrekuensi();
+        }
+        rata2 = xiXfi / totalFrekuensi;
+
+        return rata2;
+    }
+
+    public double hitungMedian()
+    {
+        double L0 = 0;
+        double fm = 0;
+        double c =0;
+        int cek = listInterval.get(0).getFrekuensi();
+        int index = 0;
+
+        int n = 0;
+        for(int i =0; i< listInterval.size(); i++)
+        {
+            n += listInterval.get(i).getFrekuensi();
+        }
+        n = n/2;
+        while (n> cek)
+        {
+            index++;
+            cek = cek +listInterval.get(index).getFrekuensi();
+        }
+
+        L0 = listInterval.get(index).getBatasBawah() - 0.5;
+        c =listInterval.get(index+1).getBatasBawah() - listInterval.get(index).getBatasAtas();
+        cek = cek - listInterval.get(index).getFrekuensi();
+        fm = listInterval.get(index).getFrekuensi();
+
+        double median = L0 + (c * (n-cek)/fm);
+        return median;
+    }
+
+    public double hitungModus()
+    {
+        double modus =0;
+        double b, b1,b2;
+        int index = 0;
+        double terbesar = 0;
+        for(int i =0; i<listInterval.size(); i++)
+        {
+           if(listInterval.get(i).getFrekuensi() > terbesar)
+            {
+                index = i;
+                terbesar = listInterval.get(i).getFrekuensi();
+            }
+        }
+        double interval = listInterval.get(index+1).getBatasAtas() - listInterval.get(index).getBatasAtas();
+        System.out.println("Interval "+interval);
+        b1 = index !=0? (listInterval.get(index).getFrekuensi() - listInterval.get(index-1).getFrekuensi()) : listInterval.get(index).getFrekuensi();
+        System.out.println("b1 " + b1);
+        b2 = (listInterval.get(index).getFrekuensi() - listInterval.get(index+1).getFrekuensi());
+        System.out.println("b2 "+b2);
+        b = listInterval.get(index).getBatasBawah() - 0.5;
+        System.out.println("b "+b);
+        modus = b + ((b1/(b1+b2)) *(interval));
+        return modus;
+    }
+
+
 }

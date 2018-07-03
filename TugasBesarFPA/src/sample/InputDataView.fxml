@@ -22,7 +22,7 @@
       <AnchorPane prefHeight="523.0" prefWidth="1184.0" style="-fx-background-color: #ecf0f1;">
          <children>
             <JFXBadge layoutX="256.0" layoutY="56.0" />
-      
+
             <JFXDialog layoutX="348.0" layoutY="135.0" />
             <Pane prefHeight="48.0" prefWidth="1190.0" style="-fx-background-color: #3498db;">
                <children>

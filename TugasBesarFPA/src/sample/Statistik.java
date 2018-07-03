@@ -104,9 +104,9 @@ public class Statistik
         double persen = 0;
         try
         {
-            persen = ((double) Pencatatan.getDetailOuput(Kondisi) / Pencatatan.getTotalProduksi()) * 100;
+            persen = ((double) Pencatatan.getTotalDetailHasilProduksi(Kondisi) / Pencatatan.getTotalProduksi()) * 100;
 
-        } catch (ParserConfigurationException | SAXException | IOException e) {
+        } catch (ParserConfigurationException | SAXException | IOException | ParseException e) {
             e.printStackTrace();
         }
         return  persen;
@@ -115,36 +115,24 @@ public class Statistik
     public static double getPeformaMesin(String mesin)
     {
         double persen = 0;
-        try {
-            if (Pencatatan.getTotalTarget(mesin)!= 0)
-                persen = ((double) Pencatatan.getTotalDetailHasilProduksi("OK")/ Pencatatan.getTotalTarget(mesin)) * 100;
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        if (Pencatatan.getTotalTarget(mesin)!= 0)
+            persen = ((double) Pencatatan.getTotalDetailHasilProduksi(mesin,"OK")/ Pencatatan.getTotalTarget(mesin)) * 100;
         return persen;
     }
 
     public static double getPeformaMesin(int bulan, int tahun, String mesin)
     {
         double persen = 0;
-        try {
-            if (Pencatatan.getTotalTarget(bulan, tahun, mesin)!= 0)
-                persen = ((double) Pencatatan.getTotalDetailHasilProduksi("OK")/ Pencatatan.getTotalTarget(mesin)) * 100;
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        if (Pencatatan.getTotalTarget(bulan, tahun, mesin)!= 0)
+            persen = (Pencatatan.getTotalDetailHasilProduksi(bulan, tahun, mesin, "OK") / Pencatatan.getTotalTarget(mesin)) * 100;
         return persen;
     }
 
     public static double getPeformaMesin(int tahun, String mesin)
     {
         double persen = 0;
-        try {
-            if (Pencatatan.getTotalTarget(tahun, mesin)!= 0)
-                persen = ((double) Pencatatan.getTotalDetailHasilProduksi("OK")/ Pencatatan.getTotalTarget(mesin)) * 100;
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        if (Pencatatan.getTotalTarget(tahun, mesin)!= 0)
+            persen = (Pencatatan.getTotalDetailHslProduksi(tahun, mesin, "OK") / Pencatatan.getTotalTarget(mesin)) * 100;
         return persen;
     }
 
