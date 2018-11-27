@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dmasyarakat');
-});
+Route::get('/', 'dmasyarakatController@index');
+Route::get('/laporan', 'formLaporanController@index');
