@@ -7,7 +7,7 @@
     <div class="row d-flex justify-content-center">
       <div class="col-md-8">        
         <div class="row">
-          <div class="col-md-5" style="background-color: #00E2BC; opacity: 0.8;" >
+          <div class="col-md-5" style="background-color: #848484; opacity: 0.8;" >
             
           </div>
           <div class="col-md-7" style="background-color: white; opacity: 0.99999">
@@ -45,15 +45,19 @@
 
                                     <div class="form-group">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                            <label class="form-check-label" for="gridRadios1">
-                                              Saya bersaksi bahwa data yang saya kirimkan benar sesuai dengan kejadian
-                                            </label>
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label">                                                    
+                                                    <input class="form-check-input" type="checkbox" name="" id="" value="checkedValue"> Saya bersaksi bahwa data yang saya kirimkan benar sesuai dengan kejadian
+                                                </label>
+                                            </div>
+                                            
+                                            
                                           </div>
                                     </div>
-                                      
+                                
+                                <button type="submit" class="btn btn-dark float-right">Laporkan</button>
                                 </div> 
-                                <button type="button" name="" id="" class="btn ml-auto" style="background-color: #00E2BC; color: azure">Submit</button>                             
+                                
                             </div>
                         </form>
                     </div>

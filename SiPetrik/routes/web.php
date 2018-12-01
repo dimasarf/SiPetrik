@@ -13,3 +13,13 @@
 
 Route::get('/', 'dmasyarakatController@index');
 Route::get('/laporan', 'formLaporanController@index');
+Route::get('/dashboardDinas', function(){
+    return view('dashboardDinas');
+});
+Route::get('/dashboardTim', function(){
+    return view('dashboardTimKesehatan');
+});
+Route::get('/login', function(){
+    return view('login');
+});
+
