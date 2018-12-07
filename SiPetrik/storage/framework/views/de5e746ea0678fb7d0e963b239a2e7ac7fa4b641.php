@@ -190,7 +190,7 @@
             <div class="col-lg-3">                
                     <div class="wrapper">                            
                         <nav id="sidebar">
-                                                        
+                            
                             <ul class="list-unstyled components">
                                 <li class="selected">                                            
                                     <a href="#"><span><i class="fas fa-check-double"></i></span> Verifikasi Laporan</a>

@@ -15,27 +15,28 @@
                   <div class="row">
                     <div class="col-md-12">
                         
-                        <form action="">
+                        <form action="/laporan" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <h5>Form Pelaporan</h5>
                                     <div class="form-group">
                                         <label for="">Nama</label>
-                                        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">                                  
+                                        <input type="text" name="nama" id="" class="form-control" placeholder="" aria-describedby="helpId">                                  
                                     </div>
                                    
                                     <div class="form-group">
                                         <label for="">NIK</label>                                     
-                                        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">                                      
+                                        <input type="text" name="nik" id="" class="form-control" placeholder="" aria-describedby="helpId">                                      
                                     </div>    
                                     
                                     <div class="form-group">
                                         <label for="">No Telepon</label>
-                                        <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">                                  
+                                        <input type="text" name="telepon" id="" class="form-control" placeholder="" aria-describedby="helpId">                                  
                                     </div>  
                                     <div class="form-group">
                                         <label for="">Deskripsi Kejadian</label>
-                                        <textarea type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId"></textarea>
+                                        <textarea type="text" name="deskripsi" id="" class="form-control" placeholder="" aria-describedby="helpId"></textarea>
                                     </div>
 
                                     <div class="form-group">
@@ -50,11 +51,11 @@
                                                     <input class="form-check-input" type="checkbox" name="" id="" value="checkedValue"> Saya bersaksi bahwa data yang saya kirimkan benar sesuai dengan kejadian
                                                 </label>
                                             </div>
-                                            
-                                            
-                                          </div>
+                                        </div>
                                     </div>
-                                
+                                    <input type="hidden" id="lokasi" name="lokasi" >
+                                    <input type="hidden" id="latitude" name="latitude" >
+                                    <input type="hidden" id="longitude" name="longitude" >
                                 <button type="submit" class="btn btn-dark float-right">Laporkan</button>
                                 </div> 
                                 
@@ -69,13 +70,24 @@
     </div>
   </div>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+    <script type="module">
         function init()
         {
             alert("Pilih Kota Dari Peta");
+        
         }
-          var map = new ol.Map({
+        
+        // import Feature from 'https://dev.jspm.io/npm:ol@5.0.0-beta.12/Feature.js';
+        // import Geolocation from 'https://dev.jspm.io/npm:ol@5.0.0-beta.12/ol/Geolocation.js';
+        // import Map from 'https://dev.jspm.io/npm:ol@5.0.0-beta.12/ol/Map.js';
+        // import View from 'https://dev.jspm.io/npm:ol@5.0.0-beta.12/ol/View.js';
+        // import Point from 'https://dev.jspm.io/npm:ol@5.0.0-beta.12/ol/geom/Point.js';
+        // import {Tile as TileLayer, Vector as VectorLayer} from 'https://dev.jspm.io/npm:ol@5.0.0-beta.12/ol/layer.js';
+        // import {OSM, Vector as VectorSource} from 'https://dev.jspm.io/npm:ol@5.0.0-beta.12/ol/source.js';
+        // import {Circle as CircleStyle, Fill, Stroke, Style} from 'https://dev.jspm.io/npm:ol@5.0.0-beta.12/ol/style.js';
+
+        var map = new ol.Map({
             target: 'map',
             layers: [
               new ol.layer.Tile({
@@ -87,13 +99,25 @@
               zoom: 4
               })
           });
+          map.getView().getCenter();
           map.on('click', function(evt){
           console.info(evt.pixel);
           console.info(map.getPixelFromCoordinate(evt.coordinate));
           console.info(ol.proj.toLonLat(evt.coordinate));
-          var coords = ol.proj.toLonLat(evt.coordinate);
+          var coords = ol.proj.toLonLat(evt.coordinate);         
           var lat = coords[1];
-          var lon = coords[0];      
+          var lon = coords[0];
+          longitude.value = lon;
+          latitude.value = lat;
+          $.ajax({
+                url: 'http://api.openweathermap.org/data/2.5/weather?lat=' +lat+'&lon='+lon+'&APPID=ff3b0bd1aa7525c9ec3cf616ddec61e6',
+                type: "GET",
+                dataType : "jsonp",
+                success : function(data)
+                {                    
+                    lokasi.value = data.name +', '+ data.sys.country;
+                }
+            })
         });       
     </script>
 @endsection

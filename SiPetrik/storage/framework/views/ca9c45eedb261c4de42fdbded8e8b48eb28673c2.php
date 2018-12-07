@@ -171,18 +171,17 @@
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto" >
+          <ul class="navbar-nav ml-auto" >            
             <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white">Home <span class="sr-only">(current)</span></a>            
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white">Tentang Kami <span class="sr-only">(current)</span></a>            
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white">Kontak <span class="sr-only">(current)</span></a>            
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white"><i class="fas fa-search"></i></a>            
+              <a class="nav-link" href="<?php echo e(route('logout')); ?>" style="color: white" 
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">               
+              <i class="fas fa-power-off mr-4"></i>
+              
+            </a>
+            <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                    <?php echo csrf_field(); ?>
+                </form>           
             </li>          
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -201,7 +200,8 @@
                                     <tr>
                                         <td><img src="/images/avatar.jpg" class="img rounded-circle d-flex mr-2 mb-2" alt="" style="height: 60px; width: 60px;"></td>
                                         <td>
-                                            <label for="" style="margin-bottom: -100px;">Dimastyo Muhaimin Arifin</label>
+                                            <label for="" style="margin-bottom: -100px;"><?php echo e(Auth::user()->name); ?></label>
+                                            <br>                                       
                                             <label for="" class="text-muted" style="margin-top: -5px; font-size: 13.5px;">Dokter</label>
                                         </td>
                                     </tr>
@@ -216,12 +216,15 @@
                                 </li>                                        
                                 <li>
                                     <a href="#"><span><i class="fas fa-globe-americas mr-3"></i></span>Pemetaan Wilayah</a>
-                                </li>                                        
+                                </li>
+                                <li>
+                                    
+                                </li>  
                             </ul>
                         </nav>                                    
                     </div>
             </div>
-            <div class="col-lg-3 panel" style="background-color: white; margin-left: -10px;">
+            <div class="col-lg-3 panel" style="background-color: white; margin-left: -20px;">
                <div class="container">
                    <div class="row">
                         <div class="input-group mt-2">
@@ -269,7 +272,7 @@
                    </div>
                </div>
             </div>
-            <div class="col-lg-4 panel " style="margin-left: -4px; ">
+            <div class="col-lg-4 panel " style="margin-left: -18px; ">
                 <div class="card scrollBar" style="width: 735px; height: 100%; border: none;">
                     <img class="card-img-top" src="holder.js/100px180/" alt="">
                     <div class="card-body">
