@@ -206,7 +206,7 @@
                         </nav>                                    
                     </div>
             </div>
-            <div class="col-lg-4 panel" style="background-color: white; margin-left: -20px;">
+            <div class="col-lg-4 panel" style="background-color: white; margin-left: -20px;" >
                <div class="container">
                    <div class="row">
                         <div class="input-group mt-2">
@@ -220,7 +220,7 @@
                             <table>
                                 <?php $__currentLoopData = $kejadians; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kejadian): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <li class="kejadian" onclick="loadKejadian();" value="<?php echo e($kejadian->id); ?>">
+                                        <li class="kejadian" value="<?php echo e($kejadian->id); ?>">
                                             
                                             <input type="hidden" id="txt"  value="<?php echo e($kejadian->id); ?>">
                                             <a>
@@ -238,7 +238,7 @@
             <?php $__env->startSection('detail'); ?>
 
             <?php echo $__env->yieldSection(); ?>
-            <div class="col-lg-4 panel " style="margin-left: -15px; " id="kejadian">
+            <div class="col-lg-4 panel " style="margin-left: -15px; " id="detailKejadian">
                 <div class="card scrollBar" style="width: 640px; height: 100%; border: none;">
                     <img class="card-img-top" src="holder.js/100px180/" alt="">
                     <div class="card-body">
@@ -346,7 +346,15 @@
           });
     $(".kejadian").click( function() {
         var id =  $(this).val();
-        alert(id);
+        $.ajax({
+            method: 'GET',
+            url: '/kejadian/' + id,
+            success : function (data) {
+                $("#detailKejadian").html(data);
+            }
+        });
+        // $('#detailKejadian').load('<?php echo url('/kejadian/+id'); ?>').fadeIn('slow');
+        // alert(id);
     });
 
     // function loadKejadian()

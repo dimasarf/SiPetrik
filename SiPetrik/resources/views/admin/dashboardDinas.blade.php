@@ -208,7 +208,7 @@
                         </nav>                                    
                     </div>
             </div>
-            <div class="col-lg-4 panel" style="background-color: white; margin-left: -20px;">
+            <div class="col-lg-4 panel" style="background-color: white; margin-left: -20px;" >
                <div class="container">
                    <div class="row">
                         <div class="input-group mt-2">
@@ -222,7 +222,7 @@
                             <table>
                                 @foreach ($kejadians as $kejadian)
                                     <tr>
-                                        <li class="kejadian" onclick="loadKejadian();" value="{{$kejadian->id}}">
+                                        <li class="kejadian" value="{{$kejadian->id}}">
                                             
                                             <input type="hidden" id="txt"  value="{{$kejadian->id}}">
                                             <a>
@@ -240,7 +240,7 @@
             @section('detail')
 
             @show
-            <div class="col-lg-4 panel " style="margin-left: -15px; " id="kejadian">
+            <div class="col-lg-4 panel " style="margin-left: -15px; " id="detailKejadian">
                 <div class="card scrollBar" style="width: 640px; height: 100%; border: none;">
                     <img class="card-img-top" src="holder.js/100px180/" alt="">
                     <div class="card-body">
@@ -350,9 +350,13 @@
         var id =  $(this).val();
         $.ajax({
             method: 'GET',
-            url: '/kejadian/' + id
+            url: '/kejadian/' + id,
+            success : function (data) {
+                $("#detailKejadian").html(data);
+            }
         });
-        alert(id);
+        // $('#detailKejadian').load('<?php echo url('/kejadian/+id'); ?>').fadeIn('slow');
+        // alert(id);
     });
 
     // function loadKejadian()

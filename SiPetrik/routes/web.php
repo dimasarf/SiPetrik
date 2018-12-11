@@ -35,3 +35,6 @@ Route::GET('admin-password/reset/{token}' ,'Admin\ResetPasswordController@showRe
 Route::GET('admin-register','Admin\RegisterController@showRegistrationForm')->name('admin.register');
 Route::POST('admin-register','Admin\RegisterController@register');
 Route::GET('/kejadian/{id}', 'dDinasKesehatanController@loadKejadian');
+Route::GET('/bencana/{id}', 'TesController@load');
+Route::POST('/kirimTim', 'dDinasKesehatanController@store');
+Route::POST('/store', 'TesController@store');

@@ -8,6 +8,6 @@ class pelapor extends Model
 {
     public function kejadian()
     {
-        return $this->hasMany('App\kejadian');
+        return $this->hasMany(kejadian::class);
     }
 }
