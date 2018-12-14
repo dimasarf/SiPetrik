@@ -15,6 +15,11 @@ class formLaporanController extends Controller
         return view('formLaporan');
     }
 
+    public function complete()
+    {
+        return view ('LaporanSukses');
+    }
+
     public function store(Request $request)
     {
         $pelapor = new pelapor();
@@ -27,6 +32,7 @@ class formLaporanController extends Controller
         $kejadian->deskripsi = $request->deskripsi;
         $kejadian->latitude = $request->latitude;
         $kejadian->longitude = $request->longitude;
+        $kejadian->status = "Belum Ditangani";
         try
         {
             
@@ -43,5 +49,6 @@ class formLaporanController extends Controller
             
         }
         
+        return redirect()->action('formLaporanController@complete');
     }
 }

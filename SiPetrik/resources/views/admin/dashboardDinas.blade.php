@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    {{-- <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script> --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -24,12 +24,120 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>Dashboard Dinas</title>
 <style>
+
+    .scrollbar {
+    margin-left: 30px;
+    float: left;
+    height: 300px;
+    width: 65px;
+    background: #fff;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+    }
+    .force-overflow {
+    min-height: 450px;
+    }
+
+    .scrollbar-primary::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+
+    .scrollbar-primary::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #4285F4; }
+
+    .scrollbar-danger::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+
+    .scrollbar-danger::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+
+    .scrollbar-danger::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #ff3547; }
+
+    .scrollbar-warning::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+
+    .scrollbar-warning::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+
+    .scrollbar-warning::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #FF8800; }
+
+    .scrollbar-success::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+
+    .scrollbar-success::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+
+    .scrollbar-success::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #00C851; }
+
+    .scrollbar-info::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+
+    .scrollbar-info::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+
+    .scrollbar-info::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #33b5e5; }
+
+    .scrollbar-default::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+
+    .scrollbar-default::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+
+    .scrollbar-default::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #2BBBAD; }
+
+    .scrollbar-secondary::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+
+    .scrollbar-secondary::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+
+    .scrollbar-secondary::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #aa66cc; }
     body { 
-      background: url("/images/bg2.jpg") no-repeat center center fixed; 
+      
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
+      
+      overflow: hidden
     }
 
     .topBar
@@ -109,11 +217,10 @@
         padding: 10px;
         font-size: 1.1em;
         display: block;
+        color: white;
     }
 
-    ul li : hover{ 
-        back
-    }
+    
 
     #sidebar ul li a:hover {
         color: blue;
@@ -158,9 +265,9 @@
 
 </style>
 </head>
-<body style="background-color: #34495e">
+<body style="">
     <nav class="navbar navbar-expand-lg navbar-dark justify-content-end " style=" background-color: #1e1e1e;">       
-        <a class="navbar-brand" href="/" style="color: white    ; font-weight: bold; ">SI PETRIK</a>
+        <a class="navbar-brand" href="/dashboardDinas" style="color: white    ; font-weight: bold; ">SI PETRIK</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -186,136 +293,39 @@
         </div>
     </nav>
 
+   
     <div class="container panel" style="margin-left: -15px;">
         <div class="row">
-            <div class="col-lg-3">                
+            
+            <div class="col-md-3">                
                     <div class="wrapper">                            
                         <nav id="sidebar">
                             {{-- <div class="sidebar-header">
                                     <h3>Bootstrap Sidebar</h3>
                                 </div>                             --}}
                             <ul class="list-unstyled components">
-                                <li class="selected">                                            
-                                    <a href="#"><span><i class="fas fa-check-double"></i></span> Verifikasi Laporan</a>
+                                <li >                                            
+                                    <a href="/laporan" ><span><i class="fas fa-check-double mr-1"></i></span> Verifikasi Laporan</a>
                                 </li>
                                 <li>
-                                    <a href="#"><span><i class="fas fa-clipboard-list mr-1"></i></span>Laporan Diterima</a>
+                                    <a href="/verifiedLaporan"><span><i class="fas fa-clipboard-list mr-3"></i></span>Laporan Diterima</a>
                                 </li>                                        
                                 <li>
-                                    <a href="#"><span><i class="fas fa-globe-americas mr-1"></i></span>Pemetaan Wilayah</a>
+                                    <a href="/pemetaanDinas"><span><i class="fas fa-globe-americas mr-1"></i></span>Pemetaan Wilayah</a>
                                 </li>                                        
                             </ul>
                         </nav>                                    
                     </div>
             </div>
-            <div class="col-lg-4 panel" style="background-color: white; margin-left: -20px;" >
-               <div class="container">
-                   <div class="row">
-                        <div class="input-group mt-2">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text" style="background-color: transparent"><i class="fas fa-search"></i></div>
-                            </div>
-                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Cari alamat">
-                        </div>
-                        
-                        <ul style="margin-left: -20px; margin-top: 15px;">                            
-                            <table>
-                                @foreach ($kejadians as $kejadian)
-                                    <tr>
-                                        <li class="kejadian" value="{{$kejadian->id}}">
-                                            
-                                            <input type="hidden" id="txt"  value="{{$kejadian->id}}">
-                                            <a>
-                                                <p style="margin-bottom: 0px;" id="lokasi"><b>{{$kejadian->lokasi}}</b></p>
-                                                <p class="laporan">  {{str_limit($kejadian->deskripsi, 100)}}</p>
-                                            </a>
-                                        </li>
-                                    </tr>
-                                @endforeach
-                            </table>                                                
-                        </ul>
-                   </div>
-               </div>
-            </div>
+            @section('konten')
+
+            @show
+            
             @section('detail')
 
             @show
-            <div class="col-lg-4 panel " style="margin-left: -15px; " id="detailKejadian">
-                <div class="card scrollBar" style="width: 640px; height: 100%; border: none;">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
-                    <div class="card-body">
-                        <div class="container">
-                            <div class="row">
-                                    <table class="">
-                                        <tr><td><p style="margin-bottom: -5px; font-size: 13px;">Pelapor</p></td></tr>
-                                        <tr><td><p style="margin-bottom: -5px; font-weight: bold;">Febrianto Eko Syahputro</p></td></tr>
-                                        <tr><td><p style="margin-bottom: -5px; font-size: 13px;">{{$kejadian->nik}}</p></td></tr>
-                                        <tr><td><p style="margin-top: 20px; margin-bottom: -5px; font-size: 13px;">Lokasi</p></td></tr>
-                                        <tr>
-                                            <td><p style="margin-bottom: -5px; font-weight: bold;">Palu, Sulawesi Tengah</p></td>
-                                            <td><p style=" margin-bottom: -5px; font-size: 13px; margin-left: 30px; " class="">Dokumentasi Lokasi Bencana</p></td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div id="map" class="map" ></div>                                                
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <a name="" id="" class="btn btn-primary " href="#" role="button" style="margin-top: 5px;">Triase</a>
-                                            </td>
-                                        </tr>
-                                        <tr><td><p style="margin-bottom: -5px; font-size: 13px;">Deskripsi</p></td></tr>
-                                        <tr>
-                                            <td colspan="2">
-                                                <p class="float-left laporan" style="width: 55%;">
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                                </p>
-                                                
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <tr><td><p style="margin-bottom: -5px; font-size: 13px;">Pelapor</p></td></tr>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <p>200 000 Jiwa</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <button type="button" name="" id="" class="btn btn-primary btn-md ml-auto col-md-5" data-toggle="modal" data-target="#exampleModalCenter">Tangani</button>
-                                    <!-- Button trigger modal -->
-                                    
-                                    
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
-                                          <div class="modal-content">
-                                            <div class="modal-header">
-                                              <h5 class="modal-title" id="exampleModalLongTitle">Penugasan Tim Ahli</h5>
-                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                              </button>
-                                            </div>
-                                            <div class="modal-body">
-                                              <div class="form-group">
-                                                <label for=""></label>
-                                                <input type="text"
-                                                  class="form-control" name="" id="" aria-describedby="helpId" placeholder="Nama tim ahli">
-                                              </div>
-                                            </div>
-                                            <div class="modal-footer">                                              
-                                              <button type="button" class="btn btn-primary">Kirim</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
+            <div class="col-md-4 panel " style="margin-left: -15px;  " id="detailKejadian">
+              
             </div>
                     
         </div>
@@ -329,49 +339,35 @@
         });
 
     });
-    
-    
 
-    
-
-    var map = new ol.Map({
-        target: 'map',
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM()
-                })
-              ],
-              view: new ol.View({
-              center: ol.proj.fromLonLat([37.41, 8.82]),
-              zoom: 4
-              })
-          });
+    // var map = new ol.Map({
+    //     target: 'map',
+    //         layers: [
+    //           new ol.layer.Tile({
+    //             source: new ol.source.OSM()
+    //             })
+    //           ],
+    //           view: new ol.View({
+    //           center: ol.proj.fromLonLat([37.41, 8.82]),
+    //           zoom: 4
+    //           })
+    //       });
     $(".kejadian").click( function() {
         var id =  $(this).val();
         $.ajax({
             method: 'GET',
             url: '/kejadian/' + id,
             success : function (data) {
-                $("#detailKejadian").html(data);
+                $("#detailKejadian").html(data).fadeIn("slow");
             }
         });
-        // $('#detailKejadian').load('<?php echo url('/kejadian/+id'); ?>').fadeIn('slow');
-        // alert(id);
+        
     });
 
-    // function loadKejadian()
-    // {
-    //     var id = document.getElementById('idKejadian').value;
-    //     alert(id);
-    // }
-       
+    $('#exitMessage').click(function(){
+        $('.message').remove();
+    })
 
-    //       map.on('click', function(evt){
-    //       console.info(evt.pixel);
-    //       console.info(map.getPixelFromCoordinate(evt.coordinate));
-    //       console.info(ol.proj.toLonLat(evt.coordinate));
-    //       var coords = ol.proj.toLonLat(evt.coordinate);                
-    // });
     
     </script>
 </body>

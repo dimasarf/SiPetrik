@@ -1,9 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    
+ 
 <div class="card scrollBar" style="width: 640px; height: 100%; border: none;">
         <img class="card-img-top" src="holder.js/100px180/" alt="">
         <div class="card-body">
             <div class="container">
                 <div class="row">
-                        <table class="">
+                    <form action="/store" method="POST">        
+                        <table class="">                        
+                        
                             <tr><td><p style="margin-bottom: -5px; font-size: 13px;">Pelapor</p></td></tr>
                             <tr><td><p style="margin-bottom: -5px; font-weight: bold;"><?php echo e($pelapor->nama); ?></p></td></tr>
                             <tr><td><p style="margin-bottom: -5px; font-size: 13px;"><?php echo e($kejadian->nik); ?></p></td></tr>
@@ -19,7 +49,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a name="" id="" class="btn btn-primary " href="#" role="button" style="margin-top: 5px;">Triase</a>
+                                    <select class="form-control" id="triase" name="triase">
+                                        <option value="merah">Merah</option>
+                                        <option value="kuning">Kuning</option>
+                                        <option value="hijau">Hijau</option>
+                                        <option value="putih">Putih</option>
+                                        <option value="hitam">Hitam</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr><td><p style="margin-bottom: -5px; font-size: 13px;">Deskripsi</p></td></tr>
@@ -34,98 +70,84 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <tr><td><p style="margin-bottom: -5px; font-size: 13px;">Jumlah Korban</p></td></tr>
+                                    <tr><td><p style="margin-bottom: -5px; font-size: 13px;">Status</p></td></tr>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p>200 000 Jiwa</p>
+                                    <p><?php echo e($kejadian->status); ?></p>
                                 </td>
                             </tr>
-                        </table>
-                        <button type="button" name="" id="" class="btn btn-primary btn-md ml-auto col-md-5" data-toggle="modal" data-target="#exampleModalCenter">Kirim Tim</button>
-                        <!-- Button trigger modal -->
-                        
+                            <tr>
+                                <td colspan="2">
+                                        
+                                    
+                                      <?php echo e(csrf_field()); ?>
+
+                                        <input type="hidden" name="idKejadian" id= "idKejadian" value="<?php echo e($kejadian->id); ?>">
+                                        <button type="submit" class="btn btn-primary float-right col-md-5" id="btnKirim">Terima Laporan</button>
+                                    </form>                                     
+                                </td>
+                            </tr>                        
+                        </table>                    
+                      
+                                                
                         
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Penugasan Tim Ahli</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body" >                                  
-                                <form action="/kirimTim" id="container" method="POST">
-                                    <div>
-                                        <input type="hidden" name="idKejadian" value="<?php echo e($kejadian->id); ?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for=""></label>
-                                        <input type="text" class="form-control" name="jumlahTim" id="jumlahTim" aria-describedby="helpId" placeholder="Jumlah Tim">
-                                        <button type="button" class="btn btn-primary mt-1 float-right" onclick="addFields();">Submit</button>
-                                    </div>
-                                </form>
-                                </div>
-                                <div class="modal-footer" id="footer">                                              
-                                    
-                                </div>
-                                  
-                              </div>
-                            </div>
-                        </div>
+                       
                 </div>
             </div>                        
         </div>
     </div>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U&callback=initMap"
+    async defer></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-        var map = new ol.Map({
-                target: 'map',
-                    layers: [
-                      new ol.layer.Tile({
-                        source: new ol.source.OSM()
-                        })
-                      ],
-                      view: new ol.View({
-                      center: ol.proj.fromLonLat([37.41, 8.82]),
-                      zoom: 4
-                      })
-        });            
-          
-        function addFields(){
-            var number = document.getElementById("jumlahTim").value;
-            var container = document.getElementById("container");
-            var footer = document.getElementById("footer");
-            while (container.hasChildNodes()) {
-                container.removeChild(container.lastChild);
-            }
-            for (i=0;i<number;i++){
-                // Append a node with a random text
-                container.appendChild(document.createTextNode("Jumlah Tim " + (i+1)+"   "));
-                // Create an <input> element, set its type and name attributes
-                var input = document.createElement("input");
-                input.type = "text";
-                input.name = "namaTIm" + i;
-                input.className = "form-control mb-1";
-                container.appendChild(input);
-            }
-
-            var button = document.createElement("input");
-            button.type = "submit";
-            button.value = "Kirim";
-            button.className = "btn btn-primary";
-            container.appendChild(button);
-            var input = document.createElement("input");
-            input.type = "hidden";
-            input.name = "jumlah";
-            input.id = "jumlah";
-            input.className = "form-control mb-1";
-            container.appendChild(input);
-            document.getElementById('jumlah').value = document.getElementById("jumlahTim").value;
-        }
+       $.ajaxSetup({
+            beforeSend: function(xhr, type) {
+                if (!type.crossDomain) {
+                    xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+                }
+            },
+        });
+        latitude = <?php echo json_encode($kejadian->latitude); ?>;
+        longitude = <?php echo json_encode($kejadian->longitude); ?>;
+        
+        function initMap() {      
+                var myLatlng = new google.maps.LatLng(latitude,longitude);
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatlng,
+                zoom: 8
+            });
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                title:"Hello World!"
+            });
+            marker.setMap(map);
+         };         
 
         
+          
+        function save(){
+            var idKejadian = document.getElementById('idKejadian').value;
+            //     $.ajax({
+            //         type: 'POST',
+            //         url: '/store',
+            //         data: {'idKejadian': idKejadian,
+            //         success : function(data){
+            //             alert("Sukses");
+            //         }   
+            //     })
+            // }
+        }   
+        
+        // $('#btnKirim').click(function(event){
+        //     var idKejadian = $('#idKejadian').val();
+        //     $.post('store',{'idKejadian': idKejadian,'_token':$('input[name=_token]').val()}, 
+        //     function(data){
+        //         alert(data);
+        //     });
+        // });
     </script>
+</body>
+</html>

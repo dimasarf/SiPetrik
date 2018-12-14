@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
     <!-- Page styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -145,12 +146,12 @@
     }
 
     #sidebar.active {
-        margin-left: -250px;
+        margin-left: 50%;
     }
 
     @media (max-width: 768px) {
         #sidebar {
-            margin-left: -250px;
+            margin-left: 20%px;
         }
         #sidebar.active {
             margin-left: 0;
@@ -224,7 +225,7 @@
                         </nav>                                    
                     </div>
             </div>
-            <div class="col-lg-3 panel" style="background-color: white; margin-left: -20px;">
+            <div class="col-lg-4 panel" style="background-color: white; margin-left: -20px; max-height :650px; overflow-y: scroll;" >
                <div class="container">
                    <div class="row">
                         <div class="input-group mt-2">
@@ -235,35 +236,16 @@
                         </div>
                         
                         <ul style="margin-left: -20px; margin-top: 15px;">
-                            <li class="">
-                                <a href="">
-                                    <b>Ngaglik, sleman Yogyakrta</b>
-                                    <p class="laporan">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                    </p>    
-                                </a>
-                            </li>
-
-                            <li class="">
-                                <a href="">
-                                    <b>Depok, sleman Yogyakrta</b>
-                                    <p class="laporan">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                    </p>    
-                                </a>
-                            </li>
-                            <li class="">
-                                <a href="">
-                                    <b>Kaliurang, sleman Yogyakrta</b>
-                                    <p class="laporan">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                    </p>    
-                                </a>
-                            </li>                            
-                            <li class="">
-                                <a href="">
-                                    <b>Kaliurang, sleman Yogyakrta</b>
-                                    <p class="laporan">  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                    </p>    
-                                </a>
-                            </li>
+                            @foreach ($penugasans as $penugasan)
+                                <li class="penugasan" value="{{$penugasan->id}}">
+                                    <a>
+                                        <b>{{$penugasan->lokasi}}</b>
+                                        <p class="laporan"> 
+                                            {{$penugasan->deskripsi}} 
+                                        </p>    
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                    </div>
                    
@@ -272,8 +254,8 @@
                    </div>
                </div>
             </div>
-            <div class="col-lg-4 panel " style="margin-left: -18px; ">
-                <div class="card scrollBar" style="width: 735px; height: 100%; border: none;">
+            <div class="col-lg-4 panel " style="margin-left: -18px; " id="detailPenugasan">
+                {{-- <div class="card scrollBar" style="width: 735px; height: 100%; border: none;">
                     <img class="card-img-top" src="holder.js/100px180/" alt="">
                     <div class="card-body">
                         <div class="container">
@@ -408,7 +390,7 @@
                             </div>                            
                         </div>                        
                     </div>
-                </div>
+                </div> --}}
             </div>
                     
         </div>
@@ -461,7 +443,17 @@
           var coords = ol.proj.toLonLat(evt.coordinate);
           var lat = coords[1];
           var lon = coords[0];      
-        });       
+        }); 
+        $(".penugasan").click( function() {
+        var id =  $(this).val();
+            $.ajax({
+                method: 'GET',
+                url: '/penugasan/' + id,
+                success : function (data) {
+                    $("#detailPenugasan").html(data).fadeIn("slow");
+                }
+            });
+        });      
 </script>
 </body>
 </html>

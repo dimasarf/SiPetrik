@@ -19,11 +19,15 @@ Route::get('/dashboardTim', 'dTimKesehatanController@index');
 Route::get('/map', function(){
     return view('testLocation');
 });
+Route::get('/complete','formLaporanController@complete');
+
 
 
 Auth::routes();
 
 Route::get('/dashboardDinas', 'dDinasKesehatanController@index');
+Route::get('/laporan', 'dDinasKesehatanController@laporan');
+Route::get('/laporanKejadian', 'formLaporanController@index');
 
 Route::GET('admin-login','Admin\LoginController@showLoginForm')->name('admin.login');
 Route::POST('admin-login','Admin\LoginController@login');
@@ -36,5 +40,9 @@ Route::GET('admin-register','Admin\RegisterController@showRegistrationForm')->na
 Route::POST('admin-register','Admin\RegisterController@register');
 Route::GET('/kejadian/{id}', 'dDinasKesehatanController@loadKejadian');
 Route::GET('/bencana/{id}', 'TesController@load');
-Route::POST('/kirimTim', 'dDinasKesehatanController@store');
-Route::POST('/store', 'TesController@store');
+Route::POST('/store', 'dDinasKesehatanController@store');
+Route::GET('/penugasan/{id}', 'dTimKesehatanController@loadPenugasan');
+Route::get('pemetaanDinas', 'dDinasKesehatanController@pemetaan');
+// Route::resource('pengirimanTim', 'PengirimanTimController');
+Route::get('/kirimTim/{id}', 'dDinasKesehatanController@kirimTim');
+Route::get('/verifiedLaporan', 'dDinasKesehatanController@loadVerifiedLaporan');
