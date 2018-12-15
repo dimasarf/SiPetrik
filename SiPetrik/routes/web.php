@@ -46,3 +46,5 @@ Route::get('pemetaanDinas', 'dDinasKesehatanController@pemetaan');
 // Route::resource('pengirimanTim', 'PengirimanTimController');
 Route::get('/kirimTim/{id}', 'dDinasKesehatanController@kirimTim');
 Route::get('/verifiedLaporan', 'dDinasKesehatanController@loadVerifiedLaporan');
+Route::get('/detailMarker/{id}', 'dDinasKesehatanController@detailMarker');
+Route::get('/findTeam/{id}', 'dDinasKesehatanController@findTeam');

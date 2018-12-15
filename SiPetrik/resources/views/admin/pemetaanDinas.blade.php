@@ -8,11 +8,22 @@
   .modal {
     position: absolute;
     top: 250px;
-    right: 100px;
+    
     bottom: 20px;
-    left: 200px;
+    left: 400px;
     z-index: 10040;
-    overflow-y: hidden!important
+    /* overflow-y: hidden!important; */
+  }
+
+  .modal-2 {
+    position: absolute;
+    top: 250px;   
+    left: 20px;
+    margin-left: 100px;;
+    z-index: 10040;
+    overflow-y: hidden!important;
+    width : 250px;
+    height: 350px;
   }
 
  .modal-dialog{
@@ -29,8 +40,8 @@
 
 <div class="col-md-9" style=" margin-left: -50px; max-height :633px; overflow-y: false;">
   <div id="map" class="map" ></div>
-  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+  <div class="modal modal-lg fade form" id="formModal" tabindex="-1" role="" aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog" role="">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="status">Modal title</h5>
@@ -39,43 +50,76 @@
             </button>
           </div>
           <div class="modal-body" >
-              <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">ID</th>
-                      <th scope="col">Nama</th>
-                      <th scope="col">Keahlian</th>
-                      <th scope="col">Kontak</th>
-                      <th scope="col">Aksi</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {{-- <input type="hidden" id="idPetugas" value="{{$petugas->id}}"> --}}
-                    <input type="hidden" id="idPenugasan">
-                    @foreach($petugas as $petugas)
-                      <tr>
-                      {{-- <input type="hidden" id="idPetugas" value="{{$petugas->id}}"> --}}
-                      
-                        <td class="id">{{$petugas->id}}</td>
-                        <td class="nama">{{$petugas->name}}</td>
-                        <td class="jabatan">{{$petugas->jabatan}}</td>
-                        <td class="kontak">{{$petugas->kontak}}</td>
-                        <td><button type="button" class="btn btn-primary kirim" id="">Kirim</button></td>
-                      </tr>
-                    @endforeach
-                  </tbody>
-                </table>
+              <div class="row">
+               
+                <div class="col-xl-12">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Keahlian</th>
+                            <th scope="col">Kontak</th>
+                            <th scope="col">Aksi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{-- <input type="hidden" id="idPetugas" value="{{$petugas->id}}"> --}}
+                          <input type="hidden" id="idPenugasan">
+                          @foreach($petugas as $petugas)
+                            <tr>
+                            {{-- <input type="hidden" id="idPetugas" value="{{$petugas->id}}"> --}}
+                            {{-- {{$petugas->name}} --}}
+                              <td class="id">{{$petugas->id}}</td>
+                              <td class="nama"></td>
+                              <td class="jabatan">{{$petugas->jabatan}}</td>
+                              <td class="kontak">{{$petugas->kontak}}</td>
+                              <td><button type="button" class="btn btn-primary kirim" id="">Kirim</button></td>
+                            </tr>
+                          @endforeach
+                        </tbody>
+                      </table>
+                </div>
+              </div>
           </div>          
         </div>
       </div>
     </div>
+
+    <div class="modal-2 modal-lg fade form" id="tes"   aria-hidden="true" data-backdrop="false">
+      <div class="modal-dialog" role="">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="status">Keterangan</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" >
+              <table>
+                  <tr ><td><b>Lokasi</b></td></tr>    
+                  <tr style="margin-bottom : -1000px"><td><p id="lokasi">Palu, Sulawesi</p></td></tr> 
+                  <tr style="margin-top : -200px"><td><b>Jumlah Korban</b></td></tr>    
+                  <tr style="margin-bottom : -1000px"><td><p id="Korban">Belum ada</p></td></tr> 
+                  <tr style="margin-top : -200px"><td><b>Status</b></td></tr>    
+                  <tr style="margin-bottom : -1000px"><td><p id="statusLaporan">Belum ada</p></td></tr> 
+              </table>
+          </div>          
+        </div>
+      </div>
+    </div>
+    
+
+
+
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOYROYFc-XcfFCMmw5MVlOZc1Tuh_HC2U&callback=initMap"
     async defer></script>
 <script>       
       var lokasi = @json($kejadians);
+      
       $('#myModal').modal({ show: false})
-       var locations = [
+      var locations = [
       ['Bondi Beach', -33.890542, 151.274856, 4],
       ['Coogee Beach', -33.923036, 151.259052, 5],
       ['Cronulla Beach', -34.028249, 151.157507, 3],
@@ -90,10 +134,12 @@
       
     });
 
+   
+
     var infowindow = new google.maps.InfoWindow();
 
     var marker, i;
-    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    // var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
     var icons = {
                   merah: {
@@ -115,20 +161,42 @@
 
 
     for (i = 0; i < lokasi.length; i++) {  
-      marker = new google.maps.Marker({
+
+        marker = new google.maps.Marker({
+        
         position: new google.maps.LatLng(lokasi[i].latitude, lokasi[i].longitude),
         icon : icons[lokasi[i].triase].icon,
         map: map
       });
       var idPenugasan;
+
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
-          // infowindow.setContent(lokasi[i].status +'\n'+ lokasi[i].triase);
-          // infowindow.open(map, marker);
-          document.getElementById('status').value = lokasi[i].status;
-          $('#formModal').modal('show');
           idPenugasan = lokasi[i].id;
-          // document.getElementById('idPenugasan') = lokasi[i].id;
+          $.ajax({
+            method: 'GET',
+            dataType: 'json',
+            url: '/detailMarker/' + lokasi[i].id,
+            success : function (data) {
+              $('#statusLaporan').html(data.status);
+              $('#Korban').html(data.jumlahKorban);
+              $('#lokasi').html(data.lokasi);              
+            }
+          });
+          
+          $.ajax({
+            method: 'GET',
+            dataType: 'json',
+            url: '/findTeam/' + lokasi[i].id,
+            success : function (data) {
+              $('.nama').each(function(){
+                data.name.push($(this).html());
+              });
+            }
+          });
+
+          document.getElementById('status').value = lokasi[i].status;
+          $('.form').modal('show');
         }
       })(marker, i));
     }

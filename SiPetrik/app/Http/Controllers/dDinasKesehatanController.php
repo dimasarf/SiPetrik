@@ -28,7 +28,11 @@ class dDinasKesehatanController extends Controller
      */
     public function index()
     {
-        $kejadians = kejadian::where('status', 'Belum Ditangani')->get();
+        $kejadians = DB::table('penugasans')
+                    ->join('kejadians','penugasans.idKejadian', '=', 'kejadians.id')
+                    ->select('kejadians.lokasi', 'kejadians.status', 'penugasans.triase', 
+                            'kejadians.latitude', 'kejadians.longitude', 'penugasans.id')                        
+                    ->get();
         return view('overviewDinas', compact('kejadians'));
     }
 
@@ -44,11 +48,33 @@ class dDinasKesehatanController extends Controller
         $kejadians =DB::table('kejadians')
                     ->join('penugasans','kejadians.id', '=', 'penugasans.idKejadian')
                     ->select('kejadians.lokasi', 'kejadians.status','penugasans.triase', 
-                            'kejadians.latitude', 'kejadians.longitude', 'penugasans.id')                        
+                            'kejadians.latitude', 'kejadians.longitude', 'penugasans.id') 
                     ->get();
         return view('admin.pemetaanDinas', compact('kejadians','petugas'));
         // return $kejadians;
     }
+
+    public function detailMarker($id)
+    {
+        $penugasan = penugasan::find($id);
+        $detailKejadian = kejadian::find($penugasan->idKejadian);
+        return response()->json($detailKejadian); 
+    }
+
+    public function findTeam($id)
+    {
+        $penugasan = user::where('idPenugasan', $id)->get();
+        if(count($penugasan) > 1)
+        {
+            return response()->json($penugasan); 
+        }
+        else{
+            $petugas = user::where('idPenugasan', 0)->get();
+            return response()->json($petugas); 
+        }
+        
+    }
+
 
     public function loadKejadian($id)
     {        

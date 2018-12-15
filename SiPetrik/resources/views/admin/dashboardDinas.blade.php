@@ -136,8 +136,8 @@
       -moz-background-size: cover;
       -o-background-size: cover;
       background-size: cover;
-      
-      overflow: hidden
+      height: 100%;
+      overflow: scroll;
     }
 
     .topBar
