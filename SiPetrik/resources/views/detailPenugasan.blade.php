@@ -3,7 +3,7 @@
         <div class="card-body">
             <div class="container">
                 <div class="row">
-                        <table class="">
+                        <table class=""> 
                             <tr><td><p style="margin-bottom: -5px; font-size: 13px;">Penugasan diterima dari</p></td></tr>
                             <tr><td><p style="margin-bottom: -5px; font-weight: bold;">Kementrian Kesehatan </p></td></tr>
                             <tr><td><p style="margin-bottom: -5px; font-size: 13px;"> 021-5201590</p></td></tr>
@@ -97,30 +97,22 @@
                                 </td>
                             </tr>
                         </table>
-                        <button type="button" name="" id="" class="btn btn-primary btn-md ml-auto col-md-5 mt-5" data-toggle="modal" data-target="#exampleModalCenter">Tangani</button>
+                        @if($detail->status == 'Sedang dalam penanganan tim kesehatan')
+                            <button type="button" name="" id="tangani" class="btn btn-success btn-md ml-auto col-md-5 mt-5 selesai">Selesai</button>
+                        @else
+                            <button type="button" name="" id="tangani" class="btn btn-primary btn-md ml-auto col-md-5 mt-5 tangani">Tangani</button>
+                        @endif
+                        
                         <!-- Button trigger modal -->
                         
                         
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal fade" id="tqModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Penugasan Tim Ahli</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="form-group">
-                                    <label for=""></label>
-                                    <input type="text"
-                                      class="form-control" name="" id="" aria-describedby="helpId" placeholder="Nama tim ahli">
-                                  </div>
-                                </div>
-                                <div class="modal-footer">                                              
-                                  <button type="button" class="btn btn-primary">Kirim</button>
-                                </div>
+                                
+                                <div class="modal-body text-center">
+                                    <h5>Terima kasih</h5>                                    
                               </div>
                             </div>
                         </div>                                    
@@ -172,5 +164,32 @@
         //         })
         //     }
         // }   
-        
+        $('.tangani').click(function()
+        {
+            var id = @json($detail->id);
+            
+            $.ajax({
+                    type: 'GET',
+                    url: '/handleLaporan/'+id,
+                    success : function(data){
+                        alert('Terima Kasih!!');
+                        $("#tangani").removeClass('btn-primary');
+                        $("#tangani").html('Selesai');
+                        $("#tangani").addClass('btn-success selesai');
+                    }   
+                })
+        });
+
+        $('.btn-success').click(function()
+        {
+            var id = @json($detail->id);
+            
+            $.ajax({
+                    type: 'GET',
+                    url: '/finishLaporan/'+id,
+                    success : function(data){
+                        alert('Terima Kasih!!!!!');
+                    }   
+                })
+        });
     </script>

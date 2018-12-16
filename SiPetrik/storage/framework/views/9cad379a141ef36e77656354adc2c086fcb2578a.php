@@ -266,32 +266,31 @@
 </style>
 </head>
 <body style="">
-    <nav class="navbar navbar-expand-lg navbar-dark justify-content-end " style=" background-color: #1e1e1e;">       
-        <a class="navbar-brand" href="/dashboardDinas" style="color: white    ; font-weight: bold; ">SI PETRIK</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto" >
-            <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white">Home <span class="sr-only">(current)</span></a>            
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white">Tentang Kami <span class="sr-only">(current)</span></a>            
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white">Kontak <span class="sr-only">(current)</span></a>            
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" style="color: white"><i class="fas fa-search"></i></a>            
-            </li>          
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="white" placeholder="Search" aria-label="Search" style="background: transparent; display: none;">          
-          </form>
-        </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-end " style=" background-color: #1e1e1e;">       
+                <a class="navbar-brand" href="/" style="color: white    ; font-weight: bold; ">SI PETRIK</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto" >            
+                    <li class="nav-item active">
+                      <a class="nav-link" href="<?php echo e(route('logout')); ?>" style="color: white" 
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">               
+                      <i class="fas fa-power-off mr-4"></i>
+                      
+                    </a>
+                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                            <?php echo csrf_field(); ?>
+                        </form>           
+                    </li>          
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="white" placeholder="Search" aria-label="Search" style="background: transparent; display: none;">          
+                  </form>
+                </div>
+            </nav>
 
    
     <div class="container panel" style="margin-left: -15px;">
@@ -314,7 +313,7 @@
                             </ul>
                         </nav>                                    
                     </div>
-            </div>
+            </div> 
             <?php $__env->startSection('konten'); ?>
 
             <?php echo $__env->yieldSection(); ?>

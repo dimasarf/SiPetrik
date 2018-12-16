@@ -33,7 +33,19 @@ class dDinasKesehatanController extends Controller
                     ->select('kejadians.lokasi', 'kejadians.status', 'penugasans.triase', 
                             'kejadians.latitude', 'kejadians.longitude', 'penugasans.id')                        
                     ->get();
-        return view('overviewDinas', compact('kejadians'));
+        $totalLaporan = kejadian::where('status', 'Laporan Diterima')->count();
+        $totalKorban = kejadian::sum('jumlahKorban');
+        $totalTim = user::all()->count();
+        $urgent = kejadian::where('status', 'Belum Ditangani')->count();
+        $totalMerah = penugasan::where('triase', 'merah')->count();
+        $totalKuning = penugasan::where('triase', 'kuning')->count();
+        $totalHitam = penugasan::where('triase', 'hitam')->count();
+        $totalHijau = penugasan::where('triase', 'hijau')->count();
+        $totalPutih = penugasan::where('triase', 'putih')->count();
+        $tims = user::all();
+        return view('overviewDinas', compact('kejadians','totalLaporan'
+                    , 'totalKorban', 'totalTim', 'urgent', 'totalMerah',
+                'totalKuning','totalHitam','totalHijau', 'totalPutih', 'tims'));
     }
 
     public function laporan()
@@ -57,19 +69,27 @@ class dDinasKesehatanController extends Controller
     public function detailMarker($id)
     {
         $penugasan = penugasan::find($id);
-        $detailKejadian = kejadian::find($penugasan->idKejadian);
+        $detailKejadian = DB::table('penugasans')
+                        ->where('penugasans.id', $id)
+                        ->join('kejadians', 'penugasans.idKejadian', '=', 'kejadians.id')
+                        ->select('kejadians.status', 'kejadians.lokasi', 'kejadians.jumlahKorban','penugasans.id')
+                        ->get()
+                        ->first();
         return response()->json($detailKejadian); 
     }
 
     public function findTeam($id)
     {
-        $penugasan = user::where('idPenugasan', $id)->get();
-        if(count($penugasan) > 1)
+        $penugasan = DB::table('users')
+                    ->whereIn('idPenugasan', [0, $id])
+                    ->orderBy('idPenugasan', 'desc')
+                    ->get();
+        if(count($penugasan) > 0)
         {
             return response()->json($penugasan); 
         }
         else{
-            $petugas = user::where('idPenugasan', 0)->get();
+            $petugas = user::where('idPenugasan', '0')->get();
             return response()->json($petugas); 
         }
         
@@ -124,10 +144,20 @@ class dDinasKesehatanController extends Controller
     {
         $laporans = DB::table('pelapors')
                     ->join('kejadians','pelapors.nik','=','kejadians.nik')
-                    ->where('kejadians.status','Laporan Diterima')
+                    ->where('kejadians.status','!=','Laporan Ditolak')
+                    ->where('kejadians.id','!=', 0)
                     ->select('kejadians.lokasi','kejadians.deskripsi', 
-                    'kejadians.nik', 'pelapors.nama', 'pelapors.telepon', 'kejadians.status')
+                            'kejadians.nik', 'pelapors.nama', 'pelapors.telepon', 'kejadians.status')
                     ->get();
         return view('verifiedLaporan', compact('laporans'));
     }
+
+    public function tarikTim($id)
+    {
+        $petugas = user::find($id);
+        $petugas->idPenugasan = 0;
+        $petugas->save();
+        return response()->json($petugas);
+    }
+   
 }

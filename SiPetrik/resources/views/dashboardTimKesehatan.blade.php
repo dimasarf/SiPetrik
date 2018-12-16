@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    {{-- <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script> --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -210,13 +211,13 @@
                             </div>                            
                             <ul class="list-unstyled components">
                                 <li class="selected">                                            
-                                    <a href="#"><span><i class="fas fa-map-marker mr-3"></i></span> Penugasan Saya</a>
+                                    <a href="/dashboardTim"><span><i class="fas fa-map-marker mr-3"></i></span> Penugasan Saya</a>
                                 </li>
                                 <li>
-                                    <a href="#"><span><i class="fas fa-notes-medical mr-3"></i></span>Cara Penanganan Pasien</a>
+                                    <a href="/triase"><span><i class="fas fa-notes-medical mr-3"></i></span>Cara Penanganan Pasien</a>
                                 </li>                                        
                                 <li>
-                                    <a href="#"><span><i class="fas fa-globe-americas mr-3"></i></span>Pemetaan Wilayah</a>
+                                    <a href="/pemetaanTim"><span><i class="fas fa-globe-americas mr-3"></i></span>Pemetaan Wilayah</a>
                                 </li>
                                 <li>
                                     
@@ -225,7 +226,10 @@
                         </nav>                                    
                     </div>
             </div>
-            <div class="col-lg-4 panel" style="background-color: white; margin-left: -20px; max-height :650px; overflow-y: scroll;" >
+           @section('konten')
+           
+           @show
+            {{-- <div class="col-lg-4 panel" style="background-color: white; margin-left: -20px; max-height :650px; overflow-y: scroll;" >
                <div class="container">
                    <div class="row">
                         <div class="input-group mt-2">
@@ -235,9 +239,9 @@
                             <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Cari alamat">
                         </div>
                         
-                        <ul style="margin-left: -20px; margin-top: 15px;">
+                        <ul class="list-group" style="margin-left: -20px; margin-top: 15px;">
                             @foreach ($penugasans as $penugasan)
-                                <li class="penugasan" value="{{$penugasan->id}}">
+                                <li class="penugasan list-group-item" value="{{$penugasan->id}}" style="width: 400px">
                                     <a>
                                         <b>{{$penugasan->lokasi}}</b>
                                         <p class="laporan"> 
@@ -253,8 +257,8 @@
                        
                    </div>
                </div>
-            </div>
-            <div class="col-lg-4 panel " style="margin-left: -18px; " id="detailPenugasan">
+            </div> --}}
+            <div class="col-lg-4 panel " style="margin-left: -18px; " id="tes">
                 {{-- <div class="card scrollBar" style="width: 735px; height: 100%; border: none;">
                     <img class="card-img-top" src="holder.js/100px180/" alt="">
                     <div class="card-body">
@@ -403,47 +407,7 @@
             $('#sidebar').toggleClass('active');
         });
     });
-    var map = new ol.Map({
-        target: 'map',
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM()
-                })
-              ],
-              view: new ol.View({
-              center: ol.proj.fromLonLat([37.41, 8.82]),
-              zoom: 4
-              })
-          });
-          map.on('click', function(evt){
-          console.info(evt.pixel);
-          console.info(map.getPixelFromCoordinate(evt.coordinate));
-          console.info(ol.proj.toLonLat(evt.coordinate));
-          var coords = ol.proj.toLonLat(evt.coordinate);
-          var lat = coords[1];
-          var lon = coords[0];      
-        }); 
-
-        var map = new ol.Map({
-        target: 'map2',
-            layers: [
-              new ol.layer.Tile({
-                source: new ol.source.OSM()
-                })
-              ],
-              view: new ol.View({
-              center: ol.proj.fromLonLat([37.41, 8.82]),
-              zoom: 4
-              })
-          });
-          map.on('click', function(evt){
-          console.info(evt.pixel);
-          console.info(map.getPixelFromCoordinate(evt.coordinate));
-          console.info(ol.proj.toLonLat(evt.coordinate));
-          var coords = ol.proj.toLonLat(evt.coordinate);
-          var lat = coords[1];
-          var lon = coords[0];      
-        }); 
+    
         $(".penugasan").click( function() {
         var id =  $(this).val();
             $.ajax({

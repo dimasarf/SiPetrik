@@ -40,11 +40,12 @@
 
 <div class="col-md-9" style=" margin-left: -50px; max-height :633px; overflow-y: false;">
   <div id="map" class="map" ></div>
+  
   <div class="modal modal-lg fade form" id="formModal" tabindex="-1" role="" aria-hidden="true" data-backdrop="false">
       <div class="modal-dialog" role="">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="status">Modal title</h5>
+            <h5 class="modal-title" id="status">Tenaga medis yang bertugas</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -53,7 +54,7 @@
               <div class="row">
                
                 <div class="col-xl-12">
-                    <table class="table">
+                    <table class="table" id="tableTim">
                         <thead>
                           <tr>
                             <th scope="col">ID</th>
@@ -63,21 +64,19 @@
                             <th scope="col">Aksi</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          {{-- <input type="hidden" id="idPetugas" value="{{$petugas->id}}"> --}}
+                      
+                          
                           <input type="hidden" id="idPenugasan">
-                          @foreach($petugas as $petugas)
-                            <tr>
+                          {{-- @foreach($petugas as $petugas) --}}
+                            {{-- <tr> --}}
                             {{-- <input type="hidden" id="idPetugas" value="{{$petugas->id}}"> --}}
-                            {{-- {{$petugas->name}} --}}
-                              <td class="id">{{$petugas->id}}</td>
-                              <td class="nama"></td>
+                              {{-- <td class="id">{{$petugas->id}}</td>
+                              <td class="nama">{{$petugas->name}}</td>
                               <td class="jabatan">{{$petugas->jabatan}}</td>
                               <td class="kontak">{{$petugas->kontak}}</td>
-                              <td><button type="button" class="btn btn-primary kirim" id="">Kirim</button></td>
-                            </tr>
-                          @endforeach
-                        </tbody>
+                              <td><button type="button" class="btn btn-primary kirim" id="">Kirim</button></td>  --}}
+                            {{-- </tr> --}}
+                          {{-- @endforeach --}}
                       </table>
                 </div>
               </div>
@@ -168,7 +167,7 @@
         icon : icons[lokasi[i].triase].icon,
         map: map
       });
-      var idPenugasan;
+      
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
         return function() {
@@ -180,18 +179,47 @@
             success : function (data) {
               $('#statusLaporan').html(data.status);
               $('#Korban').html(data.jumlahKorban);
-              $('#lokasi').html(data.lokasi);              
+              $('#lokasi').html(data.lokasi);   
+              idPenugasan = data.id;
             }
           });
           
+          var totalCells = 5;
+          
           $.ajax({
+            
             method: 'GET',
             dataType: 'json',
-            url: '/findTeam/' + lokasi[i].id,
-            success : function (data) {
-              $('.nama').each(function(){
-                data.name.push($(this).html());
-              });
+            url: '/findTeam/' + idPenugasan,
+            success : function (data) {              
+              $(".baris").remove();
+              var elements = ["id", "name", "jabatan", "kontak", ''];
+              var elements2 = ["id", "nama", "jabatan", "kontak", ''];
+              for (var i = 0; i < data.length; i++) 
+              {
+                var td, tdAksi;
+                var tr=document.createElement('tr');
+                tr.className = "baris";
+                for (var j=0; j < 4; ++j){
+                  td = document.createElement('td');
+                  td.innerHTML=data[i][elements[j]];
+                  td.className = elements2[j];
+                  tdAksi = document.createElement('td');
+                  tr.appendChild(td);
+                  
+                }
+                if(data[i].idPenugasan == 0)
+                {
+                  tdAksi.innerHTML = '<button type="button" class="btn btn-primary kirim" id="">Kirim</button>';
+                  $('#status').html('Kirim tenaga medis');
+                }
+                else{
+                  tdAksi.innerHTML =' <button type="button" class="btn btn-danger tarik" id="">Tarik</button>';
+                  $('#status').html('Tenaga medis yang bertugas');
+                }
+                tr.appendChild(tdAksi);
+                $('#tableTim').append(tr);
+              }
             }
           });
 
@@ -203,8 +231,7 @@
     $(document).on('click', '.kirim', function() {
         
         var nama = $(this).closest("tr")   // Finds the closest row <tr> 
-                          .find(".nama")     // Gets a descendent with class="nr"
-                          .text();
+                          .find(".nama").text();
         var jabatan = $(this).closest("tr")   // Finds the closest row <tr> 
                           .find(".jabatan")     // Gets a descendent with class="nr"
                           .text(); 
@@ -221,14 +248,42 @@
             data:{idPenugasan:idPenugasan}, 
             success : function (data) {
               
-              
             }
         });
-        $(this).removeClass("btn btn-primary").addClass("btn btn-success")
-                .html("Sudah Dikirim");
-        $(this).prop('disabled', true);
+        $(this).removeClass("btn btn-primary kirim").addClass("btn btn-danger tarik")
+                .html("Tarik");
+        
+        
 
     });
    
+    $(document).on('click', '.tarik', function() {
+        
+        var nama = $(this).closest("tr")   // Finds the closest row <tr> 
+                          .find(".nama").text();
+        var jabatan = $(this).closest("tr")   // Finds the closest row <tr> 
+                          .find(".jabatan")     // Gets a descendent with class="nr"
+                          .text(); 
+        var kontak = $(this).closest("tr")   // Finds the closest row <tr> 
+                            .find(".kontak")     // Gets a descendent with class="nr"
+                            .text();  
+                                 
+        var id = $(this).closest("tr")   // Finds the closest row <tr> 
+                      .find(".id")     // Gets a descendent with class="nr"
+                      .text();
+                      
+        // alert(jabatan);
+         $.ajax({
+            method: 'GET',
+            url: '/tarikTim/' + id,
+            success : function (data) {
+              
+            }
+        });
+        $(this).removeClass("btn btn-danger").addClass("btn btn-primary kirim")
+                .html("Kirim");
+        
+
+    });
 </script>
 @endsection
