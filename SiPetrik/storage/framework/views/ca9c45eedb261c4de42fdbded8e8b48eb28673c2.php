@@ -167,7 +167,7 @@
 </head>
 <body style="background-color: #34495e">
     <nav class="navbar navbar-expand-lg navbar-dark justify-content-end " style=" background-color: #1e1e1e;">       
-        <a class="navbar-brand" href="/" style="color: white    ; font-weight: bold; ">SI PETRIK</a>
+        <a class="navbar-brand" href="/welcome" style="color: white    ; font-weight: bold; ">SI PETRIK</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

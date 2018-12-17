@@ -36,13 +36,18 @@
                                     </div>  
                                     <div class="form-group">
                                         <label for="">Deskripsi Kejadian</label>
-                                        <textarea type="text" name="deskripsi" id="" class="form-control" placeholder="" aria-describedby="helpId"></textarea>
+                                        <textarea type="text" name="deskripsi" id="" class="form-control" placeholder="Deskripsikan secara lengkap kondisi korban" aria-describedby="helpId"></textarea>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="">Lokasi</label>                                     
                                         <div id="map" class="map"></div>
-                                    </div>                                    
+                                    </div>  
+                                    
+                                    <div class="form-group">
+                                        <label for="">Jumlah Korban</label>                                     
+                                        <input type="text" name="jumlahKorban" id="" class="form-control" placeholder="" aria-describedby="helpId">                                      
+                                    </div>
 
                                     <div class="form-group">
                                         <div class="form-check">

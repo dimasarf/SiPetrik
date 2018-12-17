@@ -120,7 +120,7 @@ class dDinasKesehatanController extends Controller
         {            
             $penugasan->save();           
             $kejadian->save();
-            return redirect()->back()->with('message', 'Berhasil mengirim tim');
+            return redirect()->back()->with('message', 'Berhasil menerima laporan');
         }
         catch (\Exception $e)
         {            

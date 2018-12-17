@@ -26,6 +26,35 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="kontak" class="col-md-4 col-form-label text-md-right">Kontak</label>
+
+                            <div class="col-md-6">
+                                <input id="kontak" type="text" class="form-control{{ $errors->has('kontak') ? ' is-invalid' : '' }}" name="kontak" value="{{ old('kontak') }}" required autofocus>
+
+                                @if ($errors->has('kontak'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('kontak') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="jabatan" class="col-md-4 col-form-label text-md-right">Keahlian</label>
+
+                            <div class="col-md-6">
+                                <input id="jabatan" type="text" class="form-control{{ $errors->has('jabatan') ? ' is-invalid' : '' }}" name="jabatan" value="{{ old('jabatan') }}" required autofocus>
+
+                                @if ($errors->has('jabatan'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('jabatan') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">

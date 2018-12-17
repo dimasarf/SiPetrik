@@ -32,6 +32,7 @@ class formLaporanController extends Controller
         $kejadian->deskripsi = $request->deskripsi;
         $kejadian->latitude = $request->latitude;
         $kejadian->longitude = $request->longitude;
+        $kejadian->jumlahKorban = $request->jumlahKorban;
         $kejadian->status = "Belum Ditangani";
         try
         {
